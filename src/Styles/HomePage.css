@@ -1,0 +1,83 @@
+/* Sakura Çiçeklerinin Açma Animasyonu */
+@keyframes bloom {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Sakura Çiçeklerinin Stilini Ayarlama */
+  .sakura {
+    position: absolute;
+    background: url('./images/sakura-5454921_640.png') no-repeat center center; /* Görsel yolu */
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    animation: bloom 5s ease-in-out infinite;
+    pointer-events: none; /* Çiçeklerin kullanıcı etkileşiminden etkilenmemesi için */
+  }
+  
+  .sakura:nth-child(odd) {
+    animation-delay: 2s; /* Çiçeklerin farklı zamanlarda açması */
+  }
+  
+  .sakura:nth-child(even) {
+    animation-delay: 4s; /* Çiçeklerin farklı zamanlarda açması */
+  }
+  
+  /* Sayfa Genel Stili */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Yatay kaydırma engelleniyor */
+  }
+  
+  /* HomePage Bileşeninin Arka Planı */
+  .homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://your-background-image-url') no-repeat center center;
+    background-size: cover;
+    padding: 2rem;
+    position: relative; /* Animasyonun doğru yerleşmesi için */
+  }
+  
+  /* Başlık ve Yazı Stili */
+  .homepage-container h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .homepage-container h6 {
+    color: white;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3rem;
+  }
+  
+  /* Buton Stili */
+  .homepage-container button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .homepage-container button:hover {
+    background-color: #f9d242;
+  }
+  
