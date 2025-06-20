@@ -46,28 +46,28 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
   const navItems = [
     {
-      label: t('companyInfo'),
+      label: t("companyInfo"),
       submenu: [
-        { label: "挨拶", to: "/aisatsu" },
-        { label: "会社概要", to: "/company-profile" },
+        { label: t("greeting"), to: "/aisatsu" },
+        { label: t("companyProfile"), to: "/company-profile" },
       ],
     },
     {
-      label: "当社の強み",
+      label: t("strengths"),
       to: "/strengths",
     },
     {
-      label: "サービス内容", // Hizmetler ana menüsü
+      label: t("services"),
       submenu: [
-        { label: "人材紹介", to: "/jinzai" }, // İnsan Kaynakları Tanıtımı (JinzaiPage)
-        { label: "教育機関への学生紹介", to: "/student-placement" },
-        { label: "旅行者の日本国内案内", to: "/travel-guide" },
+        { label: t("recruitment"), to: "/jinzai" },
+        { label: t("studentPlacement"), to: "/student-placement" },
+        { label: t("travelGuide"), to: "/travel-guide" },
       ],
     },
-    { label: "ブログ", to: "/blog" },
-    { label: "問い合わせ", to: "/contact" },
+    { label: t("blog"), to: "/blog" },
+    { label: t("contact"), to: "/contact" },
   ];
-
+  
   return (
     <AppBar
       position="fixed"

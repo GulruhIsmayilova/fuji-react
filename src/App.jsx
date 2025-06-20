@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 // Əlavə et: səhifəni import et
-import StudentIntroPage from './Components/StudentIntroPage';
+import StudentPlacementPage from './Components/StudentPlacementPage'; // import edirik
+import BlogPage from './Components/BlogPage'; // düz yol ver sən
+import TravelGuidePage from './Components/TravelGuidePage';
+
 
 import './i18n/i18n';
 // Layout bileşenleri
@@ -45,7 +48,11 @@ const App = () => {
               <Route path="/jinzai" element={<JinzaiPage />} />
               <Route path="/contact" element={<ContactPage />} />  {/* ContactPage sayfası eklendi */}
               <Route path="*" element={<NotFound />} />
-              <Route path="/student-intro" element={<StudentIntroPage />} /> {/* ✅ Yeni route */}
+              <Route path="/student-placement" element={<StudentPlacementPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/travel-guide" element={<TravelGuidePage />} />
+
+              
             </Routes>
           </Box>
 

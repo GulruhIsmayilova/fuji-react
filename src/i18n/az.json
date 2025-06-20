@@ -1,13 +1,92 @@
 {
-    "companyInfo": "Şirkət haqqında",
-    "greeting": "Salamlaşma",
-    "companyProfile": "Şirkət Profili",
-    "strengths": "Üstünlüklərimiz",
-    "services": "Xidmətlər",
-    "recruitment": "Kadrların seçimi",
-    "studentPlacement": "Tələbələrin yerləşdirilməsi",
-    "travelGuide": "Səyyahlar üçün bələdçilik",
-    "blog": "Bloq",
-    "contact": "Əlaqə"
+  "companyInfo": "Şirkət haqqında",
+  "greeting": "Salamlaşma",
+  "companyProfile": "Şirkət Profili",
+  "strengths": "Üstünlüklərimiz",
+  "services": "Xidmətlər",
+  "recruitment": "Kadrların seçimi",
+  "studentPlacement": "Tələbələrin yerləşdirilməsi",
+  "travelGuide": "Səyyahlar üçün bələdçilik",
+  "blog": "Bloq",
+  "contact": "Əlaqə",
+
+  "home": {
+    "welcome": "Fuji Gateway-ə xoş gəlmisiniz",
+    "subtitle": "Azərbaycan və Yaponiya arasında bacarıqlı işçilər və tələbələr üçün körpü.",
+    "learnMore": "Ətraflı bax",
+    "aboutTitle": "Biz kimik",
+    "aboutText": "Biz azərbaycanlı bacarıqlı şəxsləri Yaponiyadakı imkanlarla birləşdiririk. Missiyamız iki ölkə arasında körpü qurmaq, peşəkar inkişafı dəstəkləmək və davamlı əməkdaşlıq yaratmaqdır.",
+    "servicesTitle": "Xidmətlərimiz",
+    "service1Title": "İşə qəbul",
+    "service1": "Bacarıqlı işçilərin Yaponiyada uyğun imkanlar tapmasına yardım edirik.",
+    "service2Title": "Tələbə yerləşdirilməsi",
+    "service2": "Tələbələrə Yaponiyada dəyərli təhsil təcrübəsi qazandırmaq üçün dəstək veririk.",
+    "service3Title": "Səyyah bələdçiliyi",
+    "service3": "Yaponiya səfərində olanlara peşəkar bələdçilik xidməti təqdim edirik."
+  },
+
+  "greeting-obj": {
+    "title": "Salamlaşma",
+    "subtitle": "Yaponiya və Azərbaycan arasında körpü",
+    "highlight": "Məni tanı",
+    "text": "Salam. Mən Ağayev Sirac, Azərbaycanlıyam. Yaponiyada keçirdiyim 6 illik həyat və təcrübə mənə bu ölkənin mədəniyyəti və iş mühitini dərindən tanıtdı. Bu təcrübə nəticəsində, Azərbaycan ilə Yaponiya arasında körpü olmaq məqsədilə bu işə başladım.\n\nMissiyamız sadədir: Yapon mədəniyyətinə marağı olan azərbaycanlıları Yapon şirkətləri və təhsil müəssisələri ilə birləşdirmək və səyyahlarımıza ən yaxşı bələdçilik və dəstəyi göstərmək.\n\nİki ölkə arasında yeni əlaqələr qurmaq, qarşılıqlı dəyərləri və imkanları gələcək nəsillərə çatdırmaq üçün biz daim innovativ və çevik yanaşmalar tətbiq edirik.\n\nBu, sadəcə bir biznes deyil — bu, Azərbaycan və Yaponiyanın gələcəyini formalaşdıran bir addımdır. Gəlin birlikdə bu imkanları reallaşdıraq!\n\nHörmətlə və təşəkkürlə!"
+  },
+
+  "strengthsContent": {
+    "title": "Üstünlüklərimiz",
+    "achievementsTitle": "Nailiyyətlərimiz",
+    "card1Title": "Geniş İnsan Resursları Şəbəkəsi",
+    "card1Subtitle": "Azərbaycanın daxilindəki geniş əlaqələrimizlə müxtəlif sahələrə uyğun yüksək ixtisaslı işçi heyəti təqdim edirik.",
+    "card2Title": "Güclü Dil Bacarıqları",
+    "card2Subtitle": "Azərbaycan, türk, yapon və ingilis dillərini bilən istedadlı şəxslərlə beynəlxalq biznes üçün körpü qururuq.",
+    "card3Title": "Mədəni Körpü Rolumuz",
+    "card3Subtitle": "Azərbaycan və Yaponiya arasındakı mədəniyyət və iş üslubu fərqlərini anlayaraq, rahat ünsiyyətə dəstək oluruq.",
+    "achievement1": "Uğurlu İstihdamlar",
+    "achievement2": "Xidmət Edilən Ölkələr",
+    "achievement3": "Məmnun Müştərilər"
+  },
+
+  "recruitment-obj": {
+    "title": "Azərbaycanlı İxtisaslı İşçilərin İşə Qəbulu",
+    "subtitle": "İxtisaslı şəxsləri təşkilatınıza təqdim edirik.",
+    "card1Title": "Azərbaycan İxtisaslı Kadrlarının İşə Qəbulu",
+    "card1Subtitle": "Azərbaycan bazarında geniş təcrübəyə və yüksək texniki bacarığa sahib şəxsləri işə qəbul etməyə kömək edirik. Şirkətinizin ehtiyaclarına uyğun insan resursları tapmağı dəstəkləyirik.",
+    "card2Title": "Xərclərin Azaldılması və Keyfiyyətli İnsan Resursları",
+    "card2Subtitle": "Dünya səviyyəli bacarığa malik Azərbaycan işçiləri ilə həm xərclərə qənaət edin, həm də yüksək performanslı komandalar qurun.",
+    "card3Title": "Qlobal Rəqabət Üstünlüyü Qazanın",
+    "card3Subtitle": "Azərbaycanlı işçiləri işə qəbul etməklə beynəlxalq bazarda rəqabət gücünüzü artırır və qlobal uğurlar əldə edirsiniz.",
+    "processTitle": "Xidmət Prosesimiz",
+    "step1Title": "Əlaqə",
+    "step1Text": "E-poçt və ya telefon vasitəsilə bizimlə əlaqə saxlayın.",
+    "step2Title": "Müzakirə",
+    "step2Text": "İşə qəbul tələbləriniz haqqında görüşərək detalları müəyyənləşdiririk. Onlayn görüşlər də mümkündür.",
+    "step3Title": "İşə Qəbulun Başlaması",
+    "step3Text": "Namizədlərin seçimi və axtarışı başlayır. Əlavə iş yükü yaratmadan sizin üçün idarə edirik.",
+    "step4Title": "Müsahibə və Sənədləşmə",
+    "step4Text": "Seçilmiş namizədlərlə müsahibələri təşkil edirik və sənədləşmə prosesində dəstək oluruq.",
+    "step5Title": "İşə Başlama",
+    "step5Text": "Namizəd işə başladıqdan sonra da tam dəstək təqdim edirik."
+  },
+
+  "blog-obj": {
+    "comingSoonTitle": "Tezliklə gəlir...",
+    "comingSoonText": "Həyəcan verici məzmun qısa zamanda istifadəyə veriləcək. Bizi izləyin!"
+  },
+
+  "contactPage": {
+    "companyInfoTitle": "Şirkət Məlumatı",
+    "companyName": "Şirkətin adı: FUJI GATEWAY MMC",
+    "businessScope": "Fəaliyyət sahəsi: İnsan resursları, təhsil müəssisələri ilə əməkdaşlıq",
+    "established": "Yaranma tarixi: Dekabr 2024",
+    "location": "Məkan: Bakı, Azərbaycan",
+    "representative": "Təmsilçi: Ağayev Sirac",
+    "contactTitle": "Əlaqə",
+    "nameLabel": "Adınız",
+    "emailLabel": "E-poçt ünvanı",
+    "messageLabel": "Mesajınız",
+    "submitButton": "Göndər",
+    "successMessage": "Mesaj göndərildi!",
+    "errorMessage": "Göndərilmədi. Xəta baş verdi.",
+    "mapTitle": "Bakı Xəritəsi"
   }
-  
+}

@@ -1,29 +1,10 @@
 import React from 'react';
-import { Box, Grid, Typography, TextField, Button } from '@mui/material';
-import emailjs from 'emailjs-com';
+import { Box, Grid, Typography, useTheme, IconButton, Stack } from '@mui/material';
+import { Email, Phone, LocationOn, Facebook, Instagram, LinkedIn } from '@mui/icons-material';
 import bgImage from '../images/pngtree-a-graph-showing-graphing-statistics-image_13300948.jpg';
 
 const ContactPage = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      'service_fujigateway_gmail',       // ✅ Sənin SERVICE ID
-      'template_contactform',            // ✅ TEMPLATE ID
-      e.target,
-      'user_T8mPLFjD1ABCDxyz'            // ✅ USER ID (Public Key)
-    ).then(
-      (result) => {
-        alert('Mesaj gönderildi!');
-      },
-      (error) => {
-        alert('Göndərilmədi. Xəta baş verdi.');
-        console.error(error.text);
-      }
-    );
-
-    e.target.reset();
-  };
+  const theme = useTheme();
 
   return (
     <Box
@@ -44,7 +25,7 @@ const ContactPage = () => {
         sx={{
           maxWidth: '1100px',
           width: '100%',
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backgroundColor: theme.palette.mode === 'dark' ? 'rgba(18, 18, 18, 0.95)' : 'rgba(255, 255, 255, 0.95)',
           borderRadius: 3,
           boxShadow: 6,
           overflow: 'hidden',
@@ -55,7 +36,7 @@ const ContactPage = () => {
           <Box
             sx={{
               flex: 1,
-              backgroundColor: 'rgba(245, 245, 245, 0.9)',
+              backgroundColor: theme.palette.mode === 'dark' ? 'rgba(30, 30, 30, 0.9)' : 'rgba(245, 245, 245, 0.9)',
               p: 4,
               display: 'flex',
               flexDirection: 'column',
@@ -65,24 +46,14 @@ const ContactPage = () => {
             <Typography variant="h4" gutterBottom fontWeight="bold">
               会社情報
             </Typography>
-            <Typography variant="body1" gutterBottom>
-              商号：FUJI GATEWAY MMC
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              事業内容：人材紹介、教育機関との連携
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              設立：2024年12月
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              拠点：アゼルバイジャン・バクー市
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              代表者：アガエフ・シラジュ
-            </Typography>
+            <Typography variant="body1" gutterBottom>商号：FUJI GATEWAY MMC</Typography>
+            <Typography variant="body1" gutterBottom>事業内容：人材紹介、教育機関との連携</Typography>
+            <Typography variant="body1" gutterBottom>設立：2024年12月</Typography>
+            <Typography variant="body1" gutterBottom>拠点：アゼルバイジャン・バクー市</Typography>
+            <Typography variant="body1" gutterBottom>代表者：アガエフ・シラジュ</Typography>
           </Box>
 
-          {/* Contact Form */}
+          {/* Contact Info (instead of form) */}
           <Box
             sx={{
               flex: 1,
@@ -93,43 +64,40 @@ const ContactPage = () => {
             }}
           >
             <Typography variant="h5" gutterBottom fontWeight="bold">
-              お問い合わせ
+              Bizimlə əlaqə
             </Typography>
-            <Box component="form" onSubmit={handleSubmit} noValidate autoComplete="off">
-              <TextField
-                label="お名前"
-                name="name"
-                fullWidth
-                margin="normal"
-                required
-              />
-              <TextField
-                label="メールアドレス"
-                name="email"
-                type="email"
-                fullWidth
-                margin="normal"
-                required
-              />
-              <TextField
-                label="メッセージ"
-                name="message"
-                multiline
-                rows={4}
-                fullWidth
-                margin="normal"
-                required
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
-                sx={{ mt: 2 }}
-              >
-                送信
-              </Button>
-            </Box>
+
+            <Stack spacing={2} mt={2}>
+              <Box display="flex" alignItems="center">
+                <Phone sx={{ mr: 1 }} />
+                <Typography>+994 50 123 45 67</Typography>
+              </Box>
+
+              <Box display="flex" alignItems="center">
+                <Email sx={{ mr: 1 }} />
+                <Typography>info@fujigateway.az</Typography>
+              </Box>
+
+              <Box display="flex" alignItems="center">
+                <LocationOn sx={{ mr: 1 }} />
+                <Typography>Bakı, Sovxoz, Bina qəsəbəsi</Typography>
+              </Box>
+            </Stack>
+
+            <Typography mt={4} mb={1} color="text.secondary">
+              Bizi sosial şəbəkələrdə izləyin:
+            </Typography>
+            <Stack direction="row" spacing={1}>
+              <IconButton color="primary" href="https://facebook.com" target="_blank">
+                <Facebook />
+              </IconButton>
+              <IconButton color="secondary" href="https://instagram.com" target="_blank">
+                <Instagram />
+              </IconButton>
+              <IconButton href="https://linkedin.com" target="_blank">
+                <LinkedIn />
+              </IconButton>
+            </Stack>
           </Box>
         </Grid>
 

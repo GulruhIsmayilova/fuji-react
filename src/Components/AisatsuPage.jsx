@@ -12,16 +12,17 @@ import {
   IconButton,
 } from "@mui/material";
 import {
-  LinkedIn,
   Instagram,
-  YouTube,
   MailOutline,
 } from "@mui/icons-material";
+import { FaTiktok, FaFacebookF } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import sirajPhoto from "../images/WhatsApp Image 2025-04-12 at 17.42.40.jpeg";
 
 const AisatsuPage = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -43,7 +44,7 @@ const AisatsuPage = () => {
           spacing={6}
           alignItems="center"
           justifyContent="center"
-          direction={isMobile ? "column" : "row"} // ✔️ Şəkil sağda olacaq
+          direction={isMobile ? "column" : "row"}
         >
           {/* Yazı Hissəsi */}
           <Grid item xs={12} md={6}>
@@ -59,7 +60,7 @@ const AisatsuPage = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  Get to know me
+                  {t("greeting-obj.highlight", "Get to know me")}
                 </Typography>
 
                 <Typography
@@ -72,7 +73,7 @@ const AisatsuPage = () => {
                     color: theme.palette.mode === "dark" ? "#fff" : "#111",
                   }}
                 >
-                  挨拶
+                  {t("greeting-obj.title", "挨拶")}
                 </Typography>
 
                 <Typography
@@ -83,7 +84,7 @@ const AisatsuPage = () => {
                     mb: 3,
                   }}
                 >
-                  日本とアゼルバイジャンの架け橋
+                  {t("greeting-obj.subtitle", "日本とアゼルバイジャンの架け橋")}
                 </Typography>
 
                 <Typography
@@ -96,6 +97,7 @@ const AisatsuPage = () => {
                     color: theme.palette.text.primary,
                   }}
                 >
+                  {t("greeting-obj.text", `
 こんにちは。
 アゼルバイジャン出身のアガエフシラジュです。日本で過ごした6年間の経験を通じて、日本の文化やビジネス環境に深く触れ、その魅力に強く引き寄せられました。この経験を元に、アゼルバイジャンと日本を繋ぐ架け橋となるべく、今の事業を立ち上げました。
 
@@ -106,6 +108,7 @@ const AisatsuPage = () => {
 この会社はただのビジネスではなく、アゼルバイジャンと日本の未来を形作るための一歩です。両国の文化が交わり、新しい可能性が生まれる瞬間を共に作り上げていきましょう。
 
 どうぞ、今後ともよろしくお願いいたします。
+                  `)}
                 </Typography>
               </Box>
             </Fade>
@@ -130,17 +133,31 @@ const AisatsuPage = () => {
           </Grid>
         </Grid>
 
-        {/* Sosial Şəbəkələr & Əlaqə Düyməsi */}
+        {/* Sosial Şəbəkələr və Əlaqə */}
         <Box sx={{ textAlign: "center", mt: 8 }}>
           <Stack direction="row" spacing={2} justifyContent="center" sx={{ mb: 3 }}>
-            <IconButton color="inherit" href="https://linkedin.com" target="_blank">
-              <LinkedIn />
+            <IconButton
+              color="inherit"
+              href="https://www.facebook.com/profile.php?id=61564094514582"
+              target="_blank"
+            >
+              <FaFacebookF size={22} />
             </IconButton>
-            <IconButton color="inherit" href="https://instagram.com" target="_blank">
+
+            <IconButton
+              color="inherit"
+              href="https://www.tiktok.com/@tokyobaku"
+              target="_blank"
+            >
+              <FaTiktok size={22} />
+            </IconButton>
+
+            <IconButton
+              color="inherit"
+              href="https://www.instagram.com/tokyobaku/"
+              target="_blank"
+            >
               <Instagram />
-            </IconButton>
-            <IconButton color="inherit" href="https://youtube.com" target="_blank">
-              <YouTube />
             </IconButton>
           </Stack>
 
@@ -150,7 +167,7 @@ const AisatsuPage = () => {
             startIcon={<MailOutline />}
             href="/contact"
           >
-            Contact Me
+            {t("contact", "Contact Me")}
           </Button>
         </Box>
       </Container>

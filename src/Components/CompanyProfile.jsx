@@ -1,17 +1,38 @@
 import React from 'react';
-import { Accordion, AccordionSummary, AccordionDetails, Typography, Box, List, ListItem, ListItemText, Grid } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import vadasiraj from '../images/vadasiraj.jpeg';
+import { Typography, Box, Grid, Paper, List, ListItem, ListItemText } from '@mui/material';
+import vadasiraj from '../images/ofis.jpg';
 
 const CompanyProfile = () => {
   return (
-    <Box sx={{ width: '100%', bgcolor: '#ffffff', py: 8, px: { xs: 2, md: 10 }, maxWidth: '1000px', mx: 'auto' }}>
-      <Typography variant="h4" gutterBottom>
+    <Box
+      sx={{
+        width: '100%',
+        bgcolor: 'background.default',
+        pt: 4,
+        pb: 8,
+        px: { xs: 2, md: 6 },
+        maxWidth: '1200px',
+        mx: 'auto',
+      }}
+    >
+      <Typography
+        variant="h4"
+        gutterBottom
+        align="center"
+        sx={{
+          fontWeight: 'bold',
+          color: 'text.primary',
+          mb: 5,
+          pb: 1,
+          borderBottom: 2,
+          borderBottomColor: 'divider',
+        }}
+      >
         会社情報（Company Profile）
       </Typography>
 
       <Grid container spacing={4} alignItems="flex-start">
-        {/* Image Left Side */}
+        {/* Left Image */}
         <Grid item xs={12} md={4}>
           <Box
             component="img"
@@ -19,70 +40,53 @@ const CompanyProfile = () => {
             alt="Aghayev Siraj"
             sx={{
               width: '100%',
-              maxWidth: 250,
-              height: 'auto',
-              borderRadius: 2,
-              boxShadow: 3,
-              objectFit: 'cover',
-              mx: 'auto'
+              maxWidth: 300,
+              borderRadius: 3,
+              boxShadow: 4,
+              display: 'block',
+              mx: 'auto',
             }}
           />
         </Grid>
 
-        {/* Accordion Content */}
+        {/* Right Text Content */}
         <Grid item xs={12} md={8}>
-          <Accordion defaultExpanded>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>商号</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>FUJI GATEWAY MMC</Typography>
-            </AccordionDetails>
-          </Accordion>
+          <Paper elevation={3} sx={{ p: { xs: 3, md: 4 }, bgcolor: 'background.paper' }}>
+            <Box mb={3}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'text.primary' }}>商号</Typography>
+              <Typography color="text.secondary">FUJI GATEWAY MMC</Typography>
+            </Box>
 
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>事業内容</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                人材紹介、教育機関への紹介、観光案内
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+            <Box mb={3}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'text.primary' }}>事業内容</Typography>
+              <Typography color="text.secondary">人材紹介、教育機関への紹介、観光案内</Typography>
+            </Box>
 
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>設立</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>2024年12月</Typography>
-            </AccordionDetails>
-          </Accordion>
+            <Box mb={3}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'text.primary' }}>設立</Typography>
+              <Typography color="text.secondary">2024年12月</Typography>
+            </Box>
 
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>拠点</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                AZERBAIJAN、Baku city , Bina street , Sovxoz
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+            <Box mb={3}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'text.primary' }}>拠点</Typography>
+              <Typography color="text.secondary">AZERBAIJAN、Baku city , Bina street , Sovxoz</Typography>
+            </Box>
 
-          <Accordion>
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>役員</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <List>
-                <ListItem><ListItemText primary="代表者：AGHAYEV SIRAJ（アガエフ　シラジュ）" /></ListItem>
-                <ListItem><ListItemText primary="顧問：和田純一（前駐アゼルバイジャン日本国大使）" /></ListItem>
-                <ListItem><ListItemText primary="佐藤光行（元東電設計株式会社シマル火力発電所建設所長、アゼルバイジャン進歩勲章受章）" /></ListItem>
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'text.primary' }}>役員</Typography>
+              <List dense>
+                <ListItem>
+                  <ListItemText primary="代表者：AGHAYEV SIRAJ（アガエフ　シラジュ）" primaryTypographyProps={{ color: 'text.secondary' }} />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="顧問：和田純一（前駐アゼルバイジャン日本国大使）" primaryTypographyProps={{ color: 'text.secondary' }} />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="佐藤光行（元東電設計株式会社シマル火力発電所建設所長、アゼルバイジャン進歩勲章受章）" primaryTypographyProps={{ color: 'text.secondary' }} />
+                </ListItem>
               </List>
-            </AccordionDetails>
-          </Accordion>
+            </Box>
+          </Paper>
         </Grid>
       </Grid>
     </Box>

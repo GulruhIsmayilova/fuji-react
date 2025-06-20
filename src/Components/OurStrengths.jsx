@@ -3,48 +3,52 @@ import {
   Box,
   Typography,
   Container,
-  Button,
   useTheme,
   useMediaQuery
 } from "@mui/material";
+import { useTranslation } from 'react-i18next'; // ✅ Tərcümə funksiyası
 
-// Importing images for each strength
-import talentImage from "../images/76057eb2031a7f3522c180748c6f3f09.jpg";  // Update these paths with correct image paths
-import languageImage from "../images/pro-gute-praxis-BQ_KI_Uebersetzung.jpg";  // Update these paths with correct image paths
-import culturalImage from "../images/6e1ce4a4bc3c920ef9b7fa994e403220.jpg";  // Update these paths with correct image paths
-import achievementBackground from "../images/statistic.png"; // Background image for Achievements section
+import talentImage from "../images/76057eb2031a7f3522c180748c6f3f09.jpg";
+import languageImage from "../images/pro-gute-praxis-BQ_KI_Uebersetzung.jpg";
+import culturalImage from "../images/6e1ce4a4bc3c920ef9b7fa994e403220.jpg";
+import achievementBackground from "../images/statistic.png";
 
 const OurStrengths = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { t } = useTranslation(); // ✅ i18n tərcümə
 
-  // Card data with image sources
   const strengths = [
     {
-      title: "豊富な人材ネットワーク",
-      subtitle: "アゼルバイジャン国内での広範なネットワークを活かし、多様な業界に対応できる優秀な人材を提供します",
-      image: talentImage,  // Image for Talent Network
+      title: t("strengthsContent.card1Title", "豊富な人材ネットワーク"),
+      subtitle: t("strengthsContent.card1Subtitle", "アゼルバイジャン国内での広範なネットワークを活かし、多様な業界に対応できる優秀な人材を提供します"),
+      image: talentImage,
     },
     {
-      title: "語学能力に強み",
-      subtitle: "アゼルバイジャン語、トルコ語、日本語、英語など、複数言語に対応できる人材を確保し、国際的なビジネスの橋渡しを行います。",
-      image: languageImage,  // Image for Linguistic Abilities
+      title: t("strengthsContent.card2Title", "語学能力に強み"),
+      subtitle: t("strengthsContent.card2Subtitle", "アゼルバイジャン語、トルコ語、日本語、英語など、複数言語に対応できる人材を確保し、国際的なビジネスの橋渡しを行います。"),
+      image: languageImage,
     },
     {
-      title: "文化的な橋渡し役",
-      subtitle: "アゼルバイジャンと日本の文化やビジネスマナーの違いを理解しており、円滑なコミュニケーションをサポートします。",
-      image: culturalImage,  // Image for Cultural Bridge
+      title: t("strengthsContent.card3Title", "文化的な橋渡し役"),
+      subtitle: t("strengthsContent.card3Subtitle", "アゼルバイジャンと日本の文化やビジネスマナーの違いを理解しており、円滑なコミュニケーションをサポートします。"),
+      image: culturalImage,
     },
+  ];
+
+  const achievements = [
+    { number: "500+", label: t("strengthsContent.achievement1", "Successful Placements") },
+    { number: "10+", label: t("strengthsContent.achievement2", "Countries Served") },
+    { number: "200+", label: t("strengthsContent.achievement3", "Happy Clients") },
   ];
 
   return (
     <Box>
-      {/* Main Content */}
       <Box
         sx={{
-          mt: 10,  // Adjusted margin-top to avoid hiding the navbar
+          mt: 10,
           minHeight: "100vh",
-          background: "#ffffff",
+          backgroundColor: theme.palette.background.default,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -62,7 +66,7 @@ const OurStrengths = () => {
               fontSize: isMobile ? "1.5rem" : "2rem",
             }}
           >
-            Our Strengths
+            {t("strengthsContent.title", "Our Strengths")}
           </Typography>
 
           {/* Strengths Cards */}
@@ -80,47 +84,45 @@ const OurStrengths = () => {
                 key={index}
                 sx={{
                   width: isMobile ? "90%" : "30%",
-                  minHeight: 350,  // Increased height for better balance with larger images
+                  minHeight: 350,
                   borderRadius: "16px",
-                  border: "1px solid rgba(0, 0, 0, 0.05)",  // Thinner border for a sleeker look
+                  border: `1px solid ${theme.palette.divider}`,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
                   p: 3,
-                  backgroundColor: "#fff",
-                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+                  backgroundColor: theme.palette.background.paper,
+                  boxShadow: theme.shadows[4],
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   "&:hover": {
                     transform: "translateY(-5px)",
-                    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)",
+                    boxShadow: theme.shadows[8],
                   },
                 }}
               >
-                {/* Image */}
                 <Box
-  sx={{
-    mb: 3,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: { xs: 180, sm: 200, md: 220 },  // Daha böyük və responsiv ölçü
-    height: { xs: 180, sm: 200, md: 220 },
-    overflow: "hidden",
-  }}
->
-  <img
-    src={strength.image}
-    alt={strength.title}
-    style={{
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      borderRadius: "0",
-    }}
-  />
-</Box>
-
+                  sx={{
+                    mb: 3,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: { xs: 180, sm: 200, md: 220 },
+                    height: { xs: 180, sm: 200, md: 220 },
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={strength.image}
+                    alt={strength.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "0",
+                    }}
+                  />
+                </Box>
 
                 <Typography
                   variant="h6"
@@ -148,106 +150,60 @@ const OurStrengths = () => {
             ))}
           </Box>
 
-          {/* Achievements Section (Statistika) */}
+          {/* Achievements Section */}
           <Box
             sx={{
               mt: 10,
-              background: `url(${achievementBackground}) no-repeat center center`,  // Full width image
-              backgroundSize: "cover",  // Ensures the image fully covers the container
-              backgroundPosition: "center",  // Ensures image is centered
-              backgroundAttachment: "fixed",  // Keeps the image fixed while scrolling
+              background: `url(${achievementBackground}) no-repeat center center`,
+              backgroundSize: "cover",
+              backgroundAttachment: "fixed",
               borderRadius: "16px",
               padding: "50px 0",
-              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+              boxShadow: theme.shadows[4],
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
           >
-            <Container sx={{ textAlign: "center", color: "#fff" }}>
+            <Container sx={{ textAlign: "center" }}>
               <Typography
                 variant="h4"
                 sx={{
                   fontWeight: "bold",
-                  marginBottom: 4,
+                  mb: 4,
+                  color: "#ffffff",
                   fontSize: isMobile ? "1.5rem" : "2rem",
                 }}
               >
-                Our Achievements
+                {t("strengthsContent.achievementsTitle", "Our Achievements")}
               </Typography>
 
               <Box sx={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: 3 }}>
-                {/* Statistika Kartı 1 */}
-                <Box
-                  sx={{
-                    width: "30%",
-                    p: 4,
-                    backgroundColor: "rgba(0, 0, 0, 0.5)", // Transparent background
-                    borderRadius: "16px",
-                    textAlign: "center",
-                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)",
-                    },
-                  }}
-                >
-                  <Typography variant="h5" sx={{ fontWeight: "bold", color: "#667eea" }}>
-                    500+
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: "#fff" }}>
-                    Successful Placements
-                  </Typography>
-                </Box>
-
-                {/* Statistika Kartı 2 */}
-                <Box
-                  sx={{
-                    width: "30%",
-                    p: 4,
-                    backgroundColor: "rgba(0, 0, 0, 0.5)", // Transparent background
-                    borderRadius: "16px",
-                    textAlign: "center",
-                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)",
-                    },
-                  }}
-                >
-                  <Typography variant="h5" sx={{ fontWeight: "bold", color: "#667eea" }}>
-                    10+
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: "#fff" }}>
-                    Countries Served
-                  </Typography>
-                </Box>
-
-                {/* Statistika Kartı 3 */}
-                <Box
-                  sx={{
-                    width: "30%",
-                    p: 4,
-                    backgroundColor: "rgba(0, 0, 0, 0.5)", // Transparent background
-                    borderRadius: "16px",
-                    textAlign: "center",
-                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)",
-                    },
-                  }}
-                >
-                  <Typography variant="h5" sx={{ fontWeight: "bold", color: "#667eea" }}>
-                    200+
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: "#fff" }}>
-                    Happy Clients
-                  </Typography>
-                </Box>
+                {achievements.map((stat, idx) => (
+                  <Box
+                    key={idx}
+                    sx={{
+                      width: "30%",
+                      p: 4,
+                      backgroundColor: "rgba(0, 0, 0, 0.6)",
+                      borderRadius: "16px",
+                      textAlign: "center",
+                      boxShadow: theme.shadows[4],
+                      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                      "&:hover": {
+                        transform: "translateY(-5px)",
+                        boxShadow: theme.shadows[8],
+                      },
+                    }}
+                  >
+                    <Typography variant="h5" sx={{ fontWeight: "bold", color: "#667eea" }}>
+                      {stat.number}
+                    </Typography>
+                    <Typography variant="body1" sx={{ color: "#ffffff" }}>
+                      {stat.label}
+                    </Typography>
+                  </Box>
+                ))}
               </Box>
             </Container>
           </Box>
