@@ -1,12 +1,191 @@
 {
-    "companyInfo": "会社案内",
-    "greeting": "挨拶",
-    "companyProfile": "会社概要",
-    "strengths": "当社の強み",
-    "services": "サービス内容",
-    "recruitment": "人材紹介",
-    "studentPlacement": "教育機関への学生紹介",
-    "travelGuide": "旅行者の日本国内案内",
-    "blog": "ブログ",
-    "contact": "問い合わせ"
-  }
+  "companyInfo": "会社案内",
+  "greeting": "挨拶",
+  "companyProfile": "会社概要",
+  "strengths": "当社の強み",
+  "services": "サービス内容",
+  "recruitment": "人材紹介",
+  "studentPlacement": "教育機関への学生紹介",
+  "travelGuide": "旅行者の日本国内案内",
+  "blog": "ブログ",
+  "contact": "問い合わせ",
+
+  "home": {
+    "welcome": "Fuji Gatewayへようこそ",
+    "subtitle": "アゼルバイジャンと日本の間で人材と学生をつなぐ架け橋。",
+    "learnMore": "詳しく見る",
+    "aboutTitle": "私たちについて",
+    "aboutText": "私たちはアゼルバイジャンの優秀な人材を日本の機会とつなげます。使命は、両国の間に橋をかけ、キャリア成長と持続的な協力を促進することです。",
+    "servicesTitle": "私たちのサービス",
+    "service1Title": "採用支援",
+    "service1": "日本で適切な仕事を見つけるために支援します。",
+    "service2Title": "学生紹介",
+    "service2": "学生が日本で価値ある教育経験を得られるよう支援します。",
+    "service3Title": "旅行ガイド",
+    "service3": "日本を訪れる旅行者に専門的なガイドサービスを提供します。"
+  },
+
+  "greeting-obj": {
+    "title": "挨拶",
+    "subtitle": "アゼルバイジャンと日本の間の架け橋",
+    "highlight": "私を知ってください",
+    "text": "こんにちは。私はアガイェフ・シラジです。アゼルバイジャン出身で、日本で6年間生活し、多くの経験を積んできました。\n\nこの経験をもとに、アゼルバイジャンと日本の架け橋になることを目指してこの事業を始めました。\n\n私たちの使命は、日本文化に関心のあるアゼルバイジャン人と日本の企業や教育機関をつなげることです。\n\nこのビジネスは単なる商売ではなく、未来を形作る一歩です。"
+  },
+
+  "strengthsContent": {
+    "title": "当社の強み",
+    "achievementsTitle": "実績",
+    "card1Title": "広範な人材ネットワーク",
+    "card1Subtitle": "アゼルバイジャン国内の豊富なネットワークを活かし、あらゆる分野に適した人材を提供します。",
+    "card2Title": "優れた言語スキル",
+    "card2Subtitle": "アゼルバイジャン語、トルコ語、日本語、英語を話す人材で国際的なビジネスをサポートします。",
+    "card3Title": "文化的な橋渡し",
+    "card3Subtitle": "文化やビジネスの違いを理解し、円滑なコミュニケーションを支援します。",
+    "achievement1": "成功した採用事例",
+    "achievement2": "サービス提供国",
+    "achievement3": "満足した顧客数"
+  },
+
+  "recruitment-obj": {
+    "title": "アゼルバイジャン人材の紹介",
+    "subtitle": "適任の人材をご紹介します。",
+    "card1Title": "熟練人材の採用支援",
+    "card1Subtitle": "アゼルバイジャン市場での経験を活かし、技術力の高い人材を紹介します。",
+    "card2Title": "コスト削減と品質向上",
+    "card2Subtitle": "高スキルの人材によりコスト削減とパフォーマンス向上を実現します。",
+    "card3Title": "グローバル競争力の強化",
+    "card3Subtitle": "優秀な人材で国際市場での競争力を高めます。",
+    "processTitle": "サービスの流れ",
+    "step1Title": "お問い合わせ",
+    "step1Text": "メールまたは電話でご連絡ください。",
+    "step2Title": "打ち合わせ",
+    "step2Text": "ご希望を伺い、条件を確認します。オンライン対応可能です。",
+    "step3Title": "採用活動の開始",
+    "step3Text": "候補者の選定を開始し、採用業務を代行します。",
+    "step4Title": "面接・書類手続き",
+    "step4Text": "面接や必要書類の対応をサポートします。",
+    "step5Title": "入社とアフターサポート",
+    "step5Text": "入社後も継続的なサポートを提供します。"
+  },
+
+  "blog-obj": {
+    "comingSoonTitle": "近日公開予定...",
+    "comingSoonText": "ワクワクするコンテンツをお楽しみに！"
+  },
+
+  "contactPage": {
+    "companyInfoTitle": "会社情報",
+    "companyName": "会社名：FUJI GATEWAY LLC",
+    "businessScope": "事業内容：人材紹介、教育機関との提携",
+    "established": "設立日：2024年12月",
+    "location": "所在地：アゼルバイジャン・バクー",
+    "representative": "代表者：アガイェフ・シラジ",
+    "contactTitle": "お問い合わせ",
+    "nameLabel": "お名前",
+    "emailLabel": "メールアドレス",
+    "messageLabel": "メッセージ",
+    "submitButton": "送信",
+    "successMessage": "メッセージが送信されました！",
+    "errorMessage": "送信に失敗しました。エラーが発生しました。",
+    "mapTitle": "バクー地図"
+    
+  },"travelGuidePage": {
+  "title": "日本の見どころ",
+  "subtitle": "神秘的な都市と自然の美しさがあなたを待っています。",
+  "heroHeadline": "日本を探検しよう",
+  "iconItems": [
+    { "title": "シティツアー" },
+    { "title": "文化体験" },
+    { "title": "伝統料理" },
+    { "title": "温泉＆スパ" },
+    { "title": "花祭り" }
+  ],
+  "gallery": [
+    {
+      "title": "奈良",
+      "description": "自由に歩く鹿と歴史ある寺院で有名な場所。"
+    },
+    {
+      "title": "伊豆半島",
+      "description": "美しい海岸と温泉で知られています。"
+    },
+    {
+      "title": "長崎",
+      "description": "歴史的な出来事と文化交流の街。"
+    },
+    {
+      "title": "鎌倉",
+      "description": "大仏と静かなビーチで有名な場所。"
+    },
+    {
+      "title": "富良野",
+      "description": "ラベンダー畑で有名な美しい田園地帯。"
+    },
+    {
+      "title": "ニセコ",
+      "description": "雪山と世界クラスのスキーリゾート。"
+    },
+    {
+      "title": "名古屋",
+      "description": "テクノロジーと文化の融合した都市。"
+    },
+    {
+      "title": "中部山岳国立公園",
+      "description": "自然の美しさと家族向けアクティビティが楽しめる公園。"
+    }
+  ]
+},
+"studentPlacementPage": {
+  "mainTitle": "日本での進学を完全サポート",
+  "mainSubtitle": "未来を切り開く大学選びをお手伝いします",
+  "supportTitle": "フルサポートサービス",
+  "universities": [
+    {
+      "title": "東京大学",
+      "subtitle": "理工学・医学・人文科学"
+    },
+    {
+      "title": "京都大学",
+      "subtitle": "伝統文化研究・先端技術"
+    },
+    {
+      "title": "大阪大学",
+      "subtitle": "国際交流・ビジネススクール"
+    },
+    {
+      "title": "栄光日本語学校",
+      "subtitle": "日本語教育・文化体験・ビジネス日本語"
+    }
+  ],
+  "services": [
+    {
+      "title": "出願書類作成",
+      "description": "専門チームによる書類チェック",
+      "tooltip": "出願書類の作成・添削を専門チームが支援します。"
+    },
+    {
+      "title": "奨学金申請",
+      "description": "300以上の奨学金制度に対応",
+      "tooltip": "様々な奨学金制度の情報提供・申請サポートを行います。"
+    },
+    {
+      "title": "ビザサポート",
+      "description": "取得率99%の安心サポート",
+      "tooltip": "ビザ取得の手続き全体を一貫して支援します。"
+    },
+    {
+      "title": "生活サポート",
+      "description": "寮・銀行口座開設など幅広く支援",
+      "tooltip": "来日後の生活に必要なサポートを提供します。"
+    },
+    {
+      "title": "追加サポート",
+      "description": "24時間対応のカスタマーサポート",
+      "tooltip": "どんな質問にも対応するサポート体制をご用意しています。"
+    }
+  ]
+}
+
+
+  
+}

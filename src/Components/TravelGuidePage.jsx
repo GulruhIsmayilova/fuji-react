@@ -1,6 +1,11 @@
 import React from "react";
-import { Container, Typography, Grid, Card, CardContent, CardMedia, Box } from "@mui/material";
-import { FlightTakeoff, TempleBuddhist, Restaurant, Spa, LocalFlorist } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
+import {
+  Container, Typography, Grid, Card, CardContent, CardMedia, Box
+} from "@mui/material";
+import {
+  FlightTakeoff, TempleBuddhist, Restaurant, Spa, LocalFlorist
+} from "@mui/icons-material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { styled } from "@mui/material/styles";
 
@@ -19,14 +24,7 @@ import nisekoImage from "../images/niseko.jpg";
 import nagoyaImage from "../images/nagoya.jpg";
 import chubuImage from "../images/park.jfif";
 
-// Slayd şəkil adları
-const heroSlides = [
-  "walpaper1.jpg",
-  "imrt2.jpg",
-  "osaka.jpg",
-  "cherry.jpg",
-  // buraya öz şəkillərini əlavə et
-];
+const heroSlides = ["walpaper1.jpg", "imrt2.jpg", "osaka.jpg", "cherry.jpg"];
 
 const HeroSectionWrapper = styled(Box)({
   width: "100%",
@@ -101,26 +99,34 @@ const HeartIcon = styled(Box)({
   pointerEvents: "none",
 });
 
-const heroInfo = [
-  { icon: <FlightTakeoff sx={{ fontSize: 40, color: "dodgerblue", mb: 1 }} />, title: "シティツアー" },
-  { icon: <TempleBuddhist sx={{ fontSize: 40, color: "mediumseagreen", mb: 1 }} />, title: "文化体験" },
-  { icon: <Restaurant sx={{ fontSize: 40, color: "orange", mb: 1 }} />, title: "伝統料理" },
-  { icon: <Spa sx={{ fontSize: 40, color: "orchid", mb: 1 }} />, title: "温泉＆スパ" },
-  { icon: <LocalFlorist sx={{ fontSize: 40, color: "crimson", mb: 1 }} />, title: "花祭り" },
+const iconMap = [
+  <FlightTakeoff sx={{ fontSize: 40, color: "dodgerblue", mb: 1 }} />,
+  <TempleBuddhist sx={{ fontSize: 40, color: "mediumseagreen", mb: 1 }} />,
+  <Restaurant sx={{ fontSize: 40, color: "orange", mb: 1 }} />,
+  <Spa sx={{ fontSize: 40, color: "orchid", mb: 1 }} />,
+  <LocalFlorist sx={{ fontSize: 40, color: "crimson", mb: 1 }} />,
 ];
 
-const galleryItems = [
-  { title: "Nara", description: "自由に歩く鹿と歴史ある寺院で有名な場所。", image: naraImage },
-  { title: "Izu Peninsula", description: "美しい海岸と温泉で知られています。", image: izuImage },
-  { title: "Nagasaki", description: "歴史的な出来事と文化交流の街。", image: nagasakiImage },
-  { title: "Kamakura", description: "大仏と静かなビーチで有名な場所。", image: kamakuraImage },
-  { title: "Furano", description: "ラベンダー畑で有名な美しい田園地帯。", image: furanoImage },
-  { title: "Niseko", description: "雪山と世界クラスのスキーリゾート。", image: nisekoImage },
-  { title: "Nagoya", description: "テクノロジーと文化の融合した都市。", image: nagoyaImage },
-  { title: "Chubu Sangaku National Park", description: "自然の美しさと家族向けアクティビティが楽しめる公園。", image: chubuImage },
+const imageList = [
+  naraImage,
+  izuImage,
+  nagasakiImage,
+  kamakuraImage,
+  furanoImage,
+  nisekoImage,
+  nagoyaImage,
+  chubuImage,
 ];
 
 export default function TravelGuidePage() {
+  const { t } = useTranslation();
+
+  const rawHeroInfo = t("travelGuidePage.iconItems", { returnObjects: true });
+  const heroInfo = Array.isArray(rawHeroInfo) ? rawHeroInfo : [];
+
+  const rawGalleryItems = t("travelGuidePage.gallery", { returnObjects: true });
+  const galleryItems = Array.isArray(rawGalleryItems) ? rawGalleryItems : [];
+
   return (
     <Box>
       {/* Hero Bölməsi */}
@@ -150,10 +156,10 @@ export default function TravelGuidePage() {
         <Overlay />
         <Content>
           <Typography variant="h2" component="h1" gutterBottom>
-            日本を探検しよう
+            {t("travelGuidePage.heroHeadline")}
           </Typography>
           <Typography variant="h6" sx={{ mb: 4 }}>
-            神秘的な都市と自然の美しさがあなたを待っています。
+            {t("travelGuidePage.subtitle")}
           </Typography>
         </Content>
       </HeroSectionWrapper>
@@ -165,7 +171,7 @@ export default function TravelGuidePage() {
             {heroInfo.map((item, index) => (
               <Grid item xs={6} sm={4} md={2} key={index}>
                 <InfoItem>
-                  {item.icon}
+                  {iconMap[index]}
                   <Typography variant="subtitle1" fontWeight="bold" sx={{ mt: 1 }}>
                     {item.title}
                   </Typography>
@@ -180,7 +186,7 @@ export default function TravelGuidePage() {
       <Box sx={{ backgroundColor: "#fafafa", py: 8 }}>
         <Container maxWidth="xl">
           <Typography variant="h4" align="center" gutterBottom>
-            日本の見どころ
+            {t("travelGuidePage.title")}
           </Typography>
           <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
             {galleryItems.map((item, index) => (
@@ -189,11 +195,10 @@ export default function TravelGuidePage() {
                   <HeartIcon className="heart-icon">
                     <FavoriteBorderIcon sx={{ fontSize: 28 }} />
                   </HeartIcon>
-
                   <CardMedia
                     component="img"
                     height="160"
-                    image={item.image}
+                    image={imageList[index]}
                     alt={item.title}
                     sx={{ objectFit: "cover" }}
                   />

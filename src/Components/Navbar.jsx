@@ -4,8 +4,6 @@ import {
   Toolbar,
   Box,
   Button,
-  Menu,
-  MenuItem,
   IconButton,
   useMediaQuery,
   useTheme,
@@ -16,18 +14,21 @@ import {
   Divider,
   Typography,
   Switch,
+  Popper,
+  Paper,
+  ClickAwayListener,
+  Menu,
+  MenuItem
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import TranslateIcon from "@mui/icons-material/Translate";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { Link } from "react-router-dom"; // Link kullanarak yönlendirme yapıyoruz
+import LanguageIcon from "@mui/icons-material/Language";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-// Logo-lar
 import logoLight from "../images/logo.jpeg";
 import logoDark from "../images/darkmood.jpeg";
-import LanguageIcon from "@mui/icons-material/Language";
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const { t, i18n } = useTranslation();
@@ -67,7 +68,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     { label: t("blog"), to: "/blog" },
     { label: t("contact"), to: "/contact" },
   ];
-  
+
   return (
     <AppBar
       position="fixed"
@@ -79,7 +80,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", py: 1 }}>
-        {/* Logo */}
         <Box
           component={Link}
           to="/"
@@ -89,7 +89,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             justifyContent: "center",
             height: { xs: 32, sm: 80 },
             width: { xs: 90, sm: 120 },
-            overflow: "hidden", // make sure nothing overflows
+            overflow: "hidden",
           }}
         >
           <Box
@@ -97,30 +97,29 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             src={darkMode ? logoDark : logoLight}
             alt="Logo"
             sx={{
-              height: "100%", // this ensures it fits inside the height limit
-              width: "auto", // keep aspect ratio
+              height: "100%",
+              width: "auto",
               objectFit: "contain",
               cursor: "pointer",
             }}
           />
         </Box>
-        {/* Menü Items */}
+
         {!isMobile ? (
           <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
             {navItems.map((item, index) => (
-              <Box
-                key={index}
-                onMouseEnter={(e) => {
-                  setHoveredMenu(index);
-                  setAnchorEl(e.currentTarget);
-                }}
-                onMouseLeave={() => {
-                  setHoveredMenu(null);
-                  setAnchorEl(null);
-                }}
-              >
+              <Box key={index}>
                 {item.submenu ? (
-                  <>
+                  <Box
+                    onMouseEnter={(e) => {
+                      setHoveredMenu(index);
+                      setAnchorEl(e.currentTarget);
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredMenu(null);
+                      setAnchorEl(null);
+                    }}
+                  >
                     <Button
                       sx={{
                         color: darkMode ? "#fff" : "#000",
@@ -131,48 +130,58 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                     >
                       {item.label}
                     </Button>
-                    <Menu
-                      anchorEl={hoveredMenu === index ? anchorEl : null}
+                    <Popper
                       open={hoveredMenu === index}
-                      onClose={() => {
-                        setHoveredMenu(null);
-                        setAnchorEl(null);
-                      }}
-                      anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-                      transformOrigin={{ vertical: "top", horizontal: "left" }}
-                      MenuListProps={{
-                        onMouseEnter: () => setHoveredMenu(index),
-                        onMouseLeave: () => {
+                      anchorEl={anchorEl}
+                      placement="bottom-start"
+                      disablePortal
+                    >
+                      <ClickAwayListener
+                        onClickAway={() => {
                           setHoveredMenu(null);
                           setAnchorEl(null);
-                        },
-                      }}
-                      PaperProps={{
-                        sx: {
-                          backgroundColor: darkMode ? "#111" : "#fff",
-                          color: darkMode ? "#fff" : "#000",
-                        },
-                      }}
-                    >
-                      {item.submenu.map((sub, subIndex) => (
-                        <MenuItem
-                          key={subIndex}
-                          component={Link}
-                          to={sub.to}
-                          onClick={() => {
+                        }}
+                      >
+                        <Paper
+                          sx={{
+                            mt: 1,
+                            backgroundColor: darkMode ? "#111" : "#fff",
+                            color: darkMode ? "#fff" : "#000",
+                          }}
+                          onMouseEnter={() => setHoveredMenu(index)}
+                          onMouseLeave={() => {
                             setHoveredMenu(null);
                             setAnchorEl(null);
                           }}
                         >
-                          {sub.label}
-                        </MenuItem>
-                      ))}
-                    </Menu>
-                  </>
+                          {item.submenu.map((sub, subIndex) => (
+                            <Button
+                              key={subIndex}
+                              component={Link}
+                              to={sub.to}
+                              onClick={() => {
+                                setHoveredMenu(null);
+                                setAnchorEl(null);
+                              }}
+                              sx={{
+                                display: "block",
+                                textAlign: "left",
+                                color: darkMode ? "#fff" : "#000",
+                                width: "100%",
+                                textTransform: "none",
+                              }}
+                            >
+                              {sub.label}
+                            </Button>
+                          ))}
+                        </Paper>
+                      </ClickAwayListener>
+                    </Popper>
+                  </Box>
                 ) : (
                   <Button
                     component={Link}
-                    to={item.to} // Burada linki ekledik
+                    to={item.to}
                     sx={{
                       color: darkMode ? "#fff" : "#000",
                       fontWeight: 400,
@@ -186,11 +195,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               </Box>
             ))}
 
-            {/* Dil değişim menüsü */}
-            <IconButton
-              onClick={(e) => setLanguageMenu(e.currentTarget)}
-              color="inherit"
-            >
+            <IconButton onClick={(e) => setLanguageMenu(e.currentTarget)} color="inherit">
               <LanguageIcon />
             </IconButton>
 
@@ -199,25 +204,16 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               open={Boolean(languageMenu)}
               onClose={() => setLanguageMenu(null)}
             >
-              <MenuItem onClick={() => handleLanguageChange("jp")}>
-                <img
-                  src="https://flagcdn.com/w40/jp.png"
-                  alt="jp"
-                  style={{ width: 20, marginRight: 8 }}
-                />
+              <MenuItem onClick={() => handleLanguageChange("jp")}> 
+                <img src="https://flagcdn.com/w40/jp.png" alt="jp" style={{ width: 20, marginRight: 8 }} />
                 日本語
               </MenuItem>
-              <MenuItem onClick={() => handleLanguageChange("az")}>
-                <img
-                  src="https://flagcdn.com/w40/az.png"
-                  alt="az"
-                  style={{ width: 20, marginRight: 8 }}
-                />
+              <MenuItem onClick={() => handleLanguageChange("az")}> 
+                <img src="https://flagcdn.com/w40/az.png" alt="az" style={{ width: 20, marginRight: 8 }} />
                 Azərbaycan
               </MenuItem>
             </Menu>
 
-            {/* Dark Mode */}
             <IconButton onClick={() => setDarkMode(!darkMode)} color="inherit">
               {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
@@ -256,19 +252,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                   ))}
                   <Divider />
                   <ListItem button onClick={() => handleLanguageChange("jp")}>
-                    <img
-                      src="https://flagcdn.com/w40/jp.png"
-                      alt="jp"
-                      style={{ width: 20, marginRight: 8 }}
-                    />
+                    <img src="https://flagcdn.com/w40/jp.png" alt="jp" style={{ width: 20, marginRight: 8 }} />
                     日本語
                   </ListItem>
                   <ListItem button onClick={() => handleLanguageChange("az")}>
-                    <img
-                      src="https://flagcdn.com/w40/az.png"
-                      alt="az"
-                      style={{ width: 20, marginRight: 8 }}
-                    />
+                    <img src="https://flagcdn.com/w40/az.png" alt="az" style={{ width: 20, marginRight: 8 }} />
                     Azərbaycan
                   </ListItem>
                   <ListItem>
