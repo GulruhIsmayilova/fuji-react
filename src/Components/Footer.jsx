@@ -53,7 +53,7 @@ const Footer = ({ darkMode }) => {
               <ListItemIcon>
                 <LocationOnIcon sx={{ color: darkMode ? "#ffffff" : "#000000" }} />
               </ListItemIcon>
-              <ListItemText primary="AZERBAIJAN、Baku city , Bina street , Sovxoz" />
+              <ListItemText primary="4 Hasanoglu Street, Narimanov District, Baku, Azerbaijan " />
             </ListItem>
           </List>
 

@@ -169,6 +169,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                                 color: darkMode ? "#fff" : "#000",
                                 width: "100%",
                                 textTransform: "none",
+                                px: 2,
+                                py: 1,
                               }}
                             >
                               {sub.label}
@@ -204,11 +206,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               open={Boolean(languageMenu)}
               onClose={() => setLanguageMenu(null)}
             >
-              <MenuItem onClick={() => handleLanguageChange("jp")}> 
+              <MenuItem onClick={() => handleLanguageChange("jp")}>
                 <img src="https://flagcdn.com/w40/jp.png" alt="jp" style={{ width: 20, marginRight: 8 }} />
                 日本語
               </MenuItem>
-              <MenuItem onClick={() => handleLanguageChange("az")}> 
+              <MenuItem onClick={() => handleLanguageChange("az")}>
                 <img src="https://flagcdn.com/w40/az.png" alt="az" style={{ width: 20, marginRight: 8 }} />
                 Azərbaycan
               </MenuItem>
@@ -223,6 +225,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <IconButton onClick={() => setDrawerOpen(true)} color="inherit">
               <MenuIcon />
             </IconButton>
+
             <Drawer
               anchor="right"
               open={drawerOpen}
@@ -232,9 +235,21 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 <List>
                   {navItems.map((item, index) => (
                     <Box key={index}>
-                      <ListItem>
-                        <ListItemText primary={item.label} />
-                      </ListItem>
+                      {item.to ? (
+                        <ListItem
+                          button
+                          component={Link}
+                          to={item.to}
+                          onClick={() => setDrawerOpen(false)}
+                        >
+                          <ListItemText primary={item.label} />
+                        </ListItem>
+                      ) : (
+                        <ListItem>
+                          <ListItemText primary={item.label} />
+                        </ListItem>
+                      )}
+
                       {item.submenu &&
                         item.submenu.map((sub, subIndex) => (
                           <ListItem
@@ -243,14 +258,16 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                             component={Link}
                             to={sub.to}
                             onClick={() => setDrawerOpen(false)}
+                            sx={{ pl: 4 }}
                           >
                             <ListItemText primary={`› ${sub.label}`} />
                           </ListItem>
                         ))}
+
                       <Divider />
                     </Box>
                   ))}
-                  <Divider />
+
                   <ListItem button onClick={() => handleLanguageChange("jp")}>
                     <img src="https://flagcdn.com/w40/jp.png" alt="jp" style={{ width: 20, marginRight: 8 }} />
                     日本語
@@ -259,6 +276,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                     <img src="https://flagcdn.com/w40/az.png" alt="az" style={{ width: 20, marginRight: 8 }} />
                     Azərbaycan
                   </ListItem>
+
                   <ListItem>
                     <Typography>Dark Mode</Typography>
                     <Switch

@@ -73,119 +73,140 @@
     "comingSoonText": "ワクワクするコンテンツをお楽しみに！"
   },
 
+  "travelGuidePage": {
+    "title": "日本の見どころ",
+    "subtitle": "神秘的な都市と自然の美しさがあなたを待っています。",
+    "heroHeadline": "日本を探検しよう",
+    "iconItems": [
+      { "title": "シティツアー" },
+      { "title": "文化体験" },
+      { "title": "伝統料理" },
+      { "title": "温泉＆スパ" },
+      { "title": "花祭り" }
+    ],
+    "gallery": [
+      {
+        "title": "奈良",
+        "description": "自由に歩く鹿と歴史ある寺院で有名な場所。"
+      },
+      {
+        "title": "伊豆半島",
+        "description": "美しい海岸と温泉で知られています。"
+      },
+      {
+        "title": "長崎",
+        "description": "歴史的な出来事と文化交流の街。"
+      },
+      {
+        "title": "鎌倉",
+        "description": "大仏と静かなビーチで有名な場所。"
+      },
+      {
+        "title": "富良野",
+        "description": "ラベンダー畑で有名な美しい田園地帯。"
+      },
+      {
+        "title": "ニセコ",
+        "description": "雪山と世界クラスのスキーリゾート。"
+      },
+      {
+        "title": "名古屋",
+        "description": "テクノロジーと文化の融合した都市。"
+      },
+      {
+        "title": "中部山岳国立公園",
+        "description": "自然の美しさと家族向けアクティビティが楽しめる公園。"
+      }
+    ]
+  },
+  "studentPlacementPage": {
+    "mainTitle": "日本での進学を完全サポート",
+    "mainSubtitle": "未来を切り開く大学選びをお手伝いします",
+    "supportTitle": "フルサポートサービス",
+    "universities": [
+      {
+        "title": "東京大学",
+        "subtitle": "理工学・医学・人文科学"
+      },
+      {
+        "title": "京都大学",
+        "subtitle": "伝統文化研究・先端技術"
+      },
+      {
+        "title": "大阪大学",
+        "subtitle": "国際交流・ビジネススクール"
+      },
+      {
+        "title": "栄光日本語学校",
+        "subtitle": "日本語教育・文化体験・ビジネス日本語"
+      }
+    ],
+    "services": [
+      {
+        "title": "出願書類作成",
+        "description": "専門チームによる書類チェック",
+        "tooltip": "出願書類の作成・添削を専門チームが支援します。"
+      },
+      {
+        "title": "奨学金申請",
+        "description": "100以上の奨学金制度に対応",
+        "tooltip": "様々な奨学金制度の情報提供・申請サポートを行います。"
+      },
+      {
+        "title": "ビザサポート",
+        "description": "取得率99%の安心サポート",
+        "tooltip": "ビザ取得の手続き全体を一貫して支援します。"
+      },
+      {
+        "title": "生活サポート",
+        "description": "寮・銀行口座開設など幅広く支援",
+        "tooltip": "来日後の生活に必要なサポートを提供します。"
+      },
+      {
+        "title": "追加サポート",
+        "description": "24時間対応のカスタマーサポート",
+        "tooltip": "どんな質問にも対応するサポート体制をご用意しています。"
+      }
+    ]
+  },
+
   "contactPage": {
-    "companyInfoTitle": "会社情報",
-    "companyName": "会社名：FUJI GATEWAY LLC",
-    "businessScope": "事業内容：人材紹介、教育機関との提携",
+    "companyInfo": "会社情報",
+    "name": "商号：FUJI GATEWAY MMC",
+    "activity": "事業内容：人材紹介、教育機関との連携",
     "established": "設立日：2024年12月",
     "location": "所在地：アゼルバイジャン・バクー",
-    "representative": "代表者：アガイェフ・シラジ",
-    "contactTitle": "お問い合わせ",
-    "nameLabel": "お名前",
-    "emailLabel": "メールアドレス",
-    "messageLabel": "メッセージ",
-    "submitButton": "送信",
-    "successMessage": "メッセージが送信されました！",
-    "errorMessage": "送信に失敗しました。エラーが発生しました。",
-    "mapTitle": "バクー地図"
-    
-  },"travelGuidePage": {
-  "title": "日本の見どころ",
-  "subtitle": "神秘的な都市と自然の美しさがあなたを待っています。",
-  "heroHeadline": "日本を探検しよう",
-  "iconItems": [
-    { "title": "シティツアー" },
-    { "title": "文化体験" },
-    { "title": "伝統料理" },
-    { "title": "温泉＆スパ" },
-    { "title": "花祭り" }
-  ],
-  "gallery": [
-    {
-      "title": "奈良",
-      "description": "自由に歩く鹿と歴史ある寺院で有名な場所。"
-    },
-    {
-      "title": "伊豆半島",
-      "description": "美しい海岸と温泉で知られています。"
-    },
-    {
-      "title": "長崎",
-      "description": "歴史的な出来事と文化交流の街。"
-    },
-    {
-      "title": "鎌倉",
-      "description": "大仏と静かなビーチで有名な場所。"
-    },
-    {
-      "title": "富良野",
-      "description": "ラベンダー畑で有名な美しい田園地帯。"
-    },
-    {
-      "title": "ニセコ",
-      "description": "雪山と世界クラスのスキーリゾート。"
-    },
-    {
-      "title": "名古屋",
-      "description": "テクノロジーと文化の融合した都市。"
-    },
-    {
-      "title": "中部山岳国立公園",
-      "description": "自然の美しさと家族向けアクティビティが楽しめる公園。"
-    }
+    "ceo": "代表者：アガエフ・シラジュ",
+    "title": "お問い合わせ",
+    "phone": "+994 50 123 45 67",
+    "email": "info@fujigateway.az",
+    "address": "4 Hasanoglu Street, Narimanov District, Baku, Azerbaijan (Next to Tamstore, opposite Heydar Aliyev Center)",
+    "tokyoBakuOffice": "東京・バクー オフィス",
+    "tokyoBakuTitle": "その他の拠点：Tokyo-Baku",
+    "tokyoBakuDescription1": "Tokyo-Bakuは、日本の最新ニュース、日常生活、文化、技術革新などに関する情報をお届けする特別な情報ハブです。",
+    "tokyoBakuDescription2": "教育、アート、ライフスタイルに関する独自の視点からのコラムや記事を通じて、日本の今を深く理解する機会を提供します。",
+    "tokyoBakuSlogan": "Tokyo-Bakuと共に、日本をもっと身近に感じてください。",
+    "socialFollow": "ソーシャルメディアでフォローしてください："
+  },"companyProfilePage": {
+  "title": "会社概要",
+  "companyNameLabel": "会社名",
+  "companyName": "FUJI GATEWAY MMC",
+  "businessFieldsLabel": "事業内容",
+  "businessFields": "人材紹介、教育機関への紹介、観光ガイド",
+  "foundedLabel": "設立日",
+  "founded": "2024年12月",
+  "locationLabel": "所在地",
+   "address": "4 Hasanoglu Street, Narimanov District, Baku, Azerbaijan (Next to Tamstore, opposite Heydar Aliyev Center)",
+  "executivesTitle": "役員",
+  "executives": [
+    "代表者：AGHAYEV SIRAJ（アガエフ・シラジュ）",
+    "顧問：和田純一（元駐アゼルバイジャン日本国大使）",
+    "佐藤光行（TEPSCO社、北部火力発電所プロジェクトマネージャー、アゼルバイジャン進歩勲章受章者）"
   ]
-},
-"studentPlacementPage": {
-  "mainTitle": "日本での進学を完全サポート",
-  "mainSubtitle": "未来を切り開く大学選びをお手伝いします",
-  "supportTitle": "フルサポートサービス",
-  "universities": [
-    {
-      "title": "東京大学",
-      "subtitle": "理工学・医学・人文科学"
-    },
-    {
-      "title": "京都大学",
-      "subtitle": "伝統文化研究・先端技術"
-    },
-    {
-      "title": "大阪大学",
-      "subtitle": "国際交流・ビジネススクール"
-    },
-    {
-      "title": "栄光日本語学校",
-      "subtitle": "日本語教育・文化体験・ビジネス日本語"
-    }
-  ],
-  "services": [
-    {
-      "title": "出願書類作成",
-      "description": "専門チームによる書類チェック",
-      "tooltip": "出願書類の作成・添削を専門チームが支援します。"
-    },
-    {
-      "title": "奨学金申請",
-      "description": "300以上の奨学金制度に対応",
-      "tooltip": "様々な奨学金制度の情報提供・申請サポートを行います。"
-    },
-    {
-      "title": "ビザサポート",
-      "description": "取得率99%の安心サポート",
-      "tooltip": "ビザ取得の手続き全体を一貫して支援します。"
-    },
-    {
-      "title": "生活サポート",
-      "description": "寮・銀行口座開設など幅広く支援",
-      "tooltip": "来日後の生活に必要なサポートを提供します。"
-    },
-    {
-      "title": "追加サポート",
-      "description": "24時間対応のカスタマーサポート",
-      "tooltip": "どんな質問にも対応するサポート体制をご用意しています。"
-    }
-  ]
+},"blog-obj": {
+  "comingSoonTitle": "近日公開予定...",
+  "comingSoonText": "まもなく新しいコンテンツをお届けします。どうぞお楽しみに！"
 }
 
 
-  
 }

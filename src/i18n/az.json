@@ -4,9 +4,9 @@
   "companyProfile": "Şirkət Profili",
   "strengths": "Üstünlüklərimiz",
   "services": "Xidmətlər",
-  "recruitment": "Kadrların seçimi",
-  "studentPlacement": "Tələbələrin yerləşdirilməsi",
-  "travelGuide": "Səyyahlar üçün bələdçilik",
+  "recruitment": "Kadrların Seçimi",
+  "studentPlacement": "Tələbələrin Yerləşdirilməsi",
+  "travelGuide": "Səyyahlar üçün Bələdçilik",
   "blog": "Bloq",
   "contact": "Əlaqə",
 
@@ -68,122 +68,104 @@
     "step5Text": "Namizəd işə başladıqdan sonra da tam dəstək təqdim edirik."
   },
 
-  "blog-obj": {
-    "comingSoonTitle": "Tezliklə gəlir...",
-    "comingSoonText": "Həyəcan verici məzmun qısa zamanda istifadəyə veriləcək. Bizi izləyin!"
+  "travelGuidePage": {
+    "title": "Yaponiyanın Görməli Yerləri",
+    "subtitle": "Sirli şəhərlər və təbiətin gözəllikləri səni gözləyir.",
+    "heroHeadline": "Yaponiyanı kəşf et",
+    "iconItems": [
+      { "title": "Şəhər Turları" },
+      { "title": "Mədəniyyət Təcrübəsi" },
+      { "title": "Ənənəvi Mətbəx" },
+      { "title": "Onsen və Spa" },
+      { "title": "Gül Festivalı" }
+    ],
+    "gallery": [
+      { "title": "Nara", "description": "Azad gəzişən marallar və qədim məbədləri ilə məşhurdur." },
+      { "title": "İzu Yarımadası", "description": "Gözəl sahilləri və isti bulaqları ilə tanınır." },
+      { "title": "Nagasaki", "description": "Tarixi hadisələr və mədəniyyətlərarası əlaqələri ilə məşhur bir şəhər." },
+      { "title": "Kamakura", "description": "Böyük Buda heykəli və sakit çimərlikləri ilə məşhurdur." },
+      { "title": "Furano", "description": "Lavanda tarlaları ilə məşhur gözəl kənd ərazisi." },
+      { "title": "Niseko", "description": "Qarlı dağları və dünya səviyyəli xizək kurortu ilə tanınır." },
+      { "title": "Nagoya", "description": "Texnologiya və mədəniyyətin vəhdət təşkil etdiyi şəhər." },
+      { "title": "Chubu Sangaku Milli Parkı", "description": "Təbii gözəllik və ailələr üçün əyləncəli fəaliyyətlər təklif edir." }
+    ]
+  },
+
+  "studentPlacementPage": {
+    "mainTitle": "Yaponiyada təhsil üçün tam dəstək",
+    "mainSubtitle": "Gələcəyini formalaşdırmaq üçün düzgün universitet seçiminə kömək edirik",
+    "supportTitle": "Tam Xidmət Dəstəyi",
+    "universities": [
+      { "title": "Tokyo Universiteti", "subtitle": "Texnologiya, Tibb, Humanitar Elmlər" },
+      { "title": "Kyoto Universiteti", "subtitle": "Ənənəvi Mədəniyyət və Texnologiyalar" },
+      { "title": "Osaka Universiteti", "subtitle": "Beynəlxalq Əlaqələr və Biznes" },
+      { "title": "Eikou Yapon Dili Məktəbi", "subtitle": "Dil, Mədəniyyət və Biznes Yaponcası" }
+    ],
+    "services": [
+      {
+        "title": "Sənəd Hazırlığı",
+        "description": "Peşəkar komanda ilə yoxlanış və düzəliş",
+        "tooltip": "Müraciət sənədlərinizin hazırlanmasında sizə kömək edirik."
+      },
+      {
+        "title": "Təqaüd Müraciətləri",
+        "description": "100+ təqaüd proqramı dəstəklənir",
+        "tooltip": "Təqaüdlər haqqında məlumat və müraciət dəstəyi."
+      },
+      {
+        "title": "Viza Dəstəyi",
+        "description": "99% uğurla alınan viza yardımı",
+        "tooltip": "Viza prosesinizdə tam dəstək göstəririk."
+      },
+      {
+        "title": "Yaşayış Dəstəyi",
+        "description": "Yataqxana, bank hesabı açılması və s.",
+        "tooltip": "Yaponiyaya gəlişdən sonra gündəlik ehtiyaclar üçün yardım."
+      },
+      {
+        "title": "Əlavə Dəstək",
+        "description": "24/7 müştəri xidməti",
+        "tooltip": "Hər sual üçün daim xidmətinizdəyik."
+      }
+    ]
   },
 
   "contactPage": {
-    "companyInfoTitle": "Şirkət Məlumatı",
-    "companyName": "Şirkətin adı: FUJI GATEWAY MMC",
-    "businessScope": "Fəaliyyət sahəsi: İnsan resursları, təhsil müəssisələri ilə əməkdaşlıq",
-    "established": "Yaranma tarixi: Dekabr 2024",
-    "location": "Məkan: Bakı, Azərbaycan",
-    "representative": "Təmsilçi: Ağayev Sirac",
-    "contactTitle": "Əlaqə",
-    "nameLabel": "Adınız",
-    "emailLabel": "E-poçt ünvanı",
-    "messageLabel": "Mesajınız",
-    "submitButton": "Göndər",
-    "successMessage": "Mesaj göndərildi!",
-    "errorMessage": "Göndərilmədi. Xəta baş verdi.",
-    "mapTitle": "Bakı Xəritəsi"
-  }
-  ,
-"travelGuidePage": {
-  "title": "Yaponiyanın Görməli Yerləri",
-  "subtitle": "Sirli şəhərlər və təbiətin gözəllikləri səni gözləyir.",
-  "heroHeadline": "Yaponiyanı kəşf et",
-  "iconItems": [
-    { "title": "Şəhər Turları" },
-    { "title": "Mədəniyyət Təcrübəsi" },
-    { "title": "Ənənəvi Mətbəx" },
-    { "title": "Onsen və Spa" },
-    { "title": "Gül Festivalı" }
-  ],
-  "gallery": [
-    {
-      "title": "Nara",
-      "description": "Azad gəzişən marallar və qədim məbədləri ilə məşhurdur."
-    },
-    {
-      "title": "İzu Yarımadası",
-      "description": "Gözəl sahilləri və isti bulaqları ilə tanınır."
-    },
-    {
-      "title": "Nagasaki",
-      "description": "Tarixi hadisələr və mədəniyyətlərarası əlaqələri ilə məşhur bir şəhər."
-    },
-    {
-      "title": "Kamakura",
-      "description": "Böyük Buda heykəli və sakit çimərlikləri ilə məşhurdur."
-    },
-    {
-      "title": "Furano",
-      "description": "Lavanda tarlaları ilə məşhur gözəl kənd ərazisi."
-    },
-    {
-      "title": "Niseko",
-      "description": "Qarlı dağları və dünya səviyyəli xizək kurortu ilə tanınır."
-    },
-    {
-      "title": "Nagoya",
-      "description": "Texnologiya və mədəniyyətin vəhdət təşkil etdiyi şəhər."
-    },
-    {
-      "title": "Chubu Sangaku Milli Parkı",
-      "description": "Təbii gözəllik və ailələr üçün əyləncəli fəaliyyətlər təklif edir."
-    }
+    "companyInfo": "Şirkət Məlumatı",
+    "name": "Şirkət adı: FUJI GATEWAY MMC",
+    "activity": "Fəaliyyət sahəsi: İnsan resursları, təhsil əməkdaşlığı",
+    "established": "Təsis tarixi: 2024-cü ilin dekabrı",
+    "location": "Yerləşmə: Bakı şəhəri, Azərbaycan",
+    "ceo": "Rəhbər: Ağayev Sirac",
+    "title": "Əlaqə",
+    "phone": "+994 50 123 45 67",
+    "email": "info@fujigateway.az",
+    "address": "Bakı şəhəri, Nərimanov rayonu, Həsənoğlu küçəsi 4, Heydər Əliyev Mərkəzinin qarşısı, Tamstore supermarketin yanı",
+    "tokyoBakuOffice": "Tokyo-Baku ofisi",
+    "tokyoBakuTitle": "Əlavə mərkəz: Tokyo-Baku",
+    "tokyoBakuDescription1": "Tokyo-Baku, Yaponiyanın son xəbərləri, gündəlik həyat, mədəniyyət və texnologiya barədə məlumat verən xüsusi informasiya mərkəzidir.",
+    "tokyoBakuDescription2": "Təhsil, incəsənət və həyat tərzi üzrə fərqli məqalələrlə Yaponiyanı daha dərindən anlamaq fürsəti təqdim edir.",
+    "tokyoBakuSlogan": "Tokyo-Baku ilə Yaponiya daha yaxın olacaq.",
+    "socialFollow": "Bizi sosial şəbəkələrdə izləyin:"
+  },"companyProfilePage": {
+  "title": "Şirkət Profili",
+  "companyNameLabel": "Şirkət Adı",
+  "companyName": "FUJI GATEWAY MMC",
+  "businessFieldsLabel": "Fəaliyyət sahəsi",
+  "businessFields": "İnsan resurslarının təqdimatı, təhsil müəssisələrinə yönləndirmə, turizm bələdçiliyi",
+  "foundedLabel": "Təsis tarixi",
+  "founded": "2024-cü il dekabr",
+  "locationLabel": "Ünvan",
+  "address": "Bakı şəhəri, Nərimanov rayonu, Həsənoğlu küçəsi 4, Heydər Əliyev Mərkəzinin qarşısı, Tamstore supermarketin yanı",
+  "executivesTitle": "İdarə heyəti",
+  "executives": [
+    "İcraçı direktor: AGHAYEV SIRAJ (Ağayev Sirac)",
+    "Məsləhətçi: Vada Junichi (Yaponiyanın sabiq Azərbaycan səfiri)",
+    "Sato Mitsuyuki (TEPSCO şirkəti, Şimal İES layihə rəhbəri, Azərbaycan İnkişaf Ordeni laureatı)"
   ]
-},"studentPlacementPage": {
-  "mainTitle": "Yaponiyada təhsil üçün tam dəstək",
-  "mainSubtitle": "Gələcəyini formalaşdırmaq üçün düzgün universitet seçiminə kömək edirik",
-  "supportTitle": "Tam Xidmət Dəstəyi",
-  "universities": [
-    {
-      "title": "Tokyo Universiteti",
-      "subtitle": "Texnologiya, Tibb, Humanitar Elmlər"
-    },
-    {
-      "title": "Kyoto Universiteti",
-      "subtitle": "Ənənəvi Mədəniyyət və Texnologiyalar"
-    },
-    {
-      "title": "Osaka Universiteti",
-      "subtitle": "Beynəlxalq Əlaqələr və Biznes"
-    },
-    {
-      "title": "Eikou Yapon Dili Məktəbi",
-      "subtitle": "Dil, Mədəniyyət və Biznes Yaponcası"
-    }
-  ],
-  "services": [
-    {
-      "title": "Sənəd Hazırlığı",
-      "description": "Peşəkar komanda ilə yoxlanış və düzəliş",
-      "tooltip": "Müraciət sənədlərinizin hazırlanmasında sizə kömək edirik."
-    },
-    {
-      "title": "Təqaüd Müraciətləri",
-      "description": "300+ təqaüd proqramı dəstəklənir",
-      "tooltip": "Təqaüdlər haqqında məlumat və müraciət dəstəyi."
-    },
-    {
-      "title": "Viza Dəstəyi",
-      "description": "99% uğurla alınan viza yardımı",
-      "tooltip": "Viza prosesinizdə tam dəstək göstəririk."
-    },
-    {
-      "title": "Yaşayış Dəstəyi",
-      "description": "Yataqxana, bank hesabı açılması və s.",
-      "tooltip": "Yaponiyaya gəlişdən sonra gündəlik ehtiyaclar üçün yardım."
-    },
-    {
-      "title": "Əlavə Dəstək",
-      "description": "24/7 müştəri xidməti",
-      "tooltip": "Hər sual üçün daim xidmətinizdəyik."
-    }
-  ]
+},"blog-obj": {
+  "comingSoonTitle": "Tezliklə gəlir...",
+  "comingSoonText": "Yeni və maraqlı məqalələr üçün bizi izləməyə davam edin!"
 }
 
 

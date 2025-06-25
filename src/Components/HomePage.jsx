@@ -1,19 +1,21 @@
 import React from 'react';
-import { Box, Typography, Button, Container } from "@mui/material";
+import { Box, Typography, Button, Container, useTheme } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import backImage from '../images/new back.png';
+import backImage from '../images/lastback.png';
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation(); // 💡 i18n tərcümə funksiyası
+  const { t } = useTranslation();
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
 
   const handleLearnMoreClick = () => {
     navigate('/aisatsu');
   };
 
   return (
-    <Box sx={{ width: "100%", position: "relative" }}>
+    <Box sx={{ width: "100%", position: "relative", backgroundColor: theme.palette.background.default, color: theme.palette.text.primary }}>
       {/* Hero Section */}
       <Box
         sx={{
@@ -26,23 +28,23 @@ const HomePage = () => {
           justifyContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
-          filter: 'brightness(0.6)',
+          filter: isDarkMode ? 'brightness(0.9)' : 'none',
         }}
       >
         <Box sx={{ zIndex: 1 }}>
           <Typography variant="h2" sx={{
             fontWeight: 'bold',
-            textShadow: '2px 2px 6px rgba(0, 0, 0, 0.7)',
             letterSpacing: '2px',
-            color: '#fff'
+            color: '#ffffff',
+            fontSize: { xs: '2rem', md: '3rem' }
           }}>
             {t("home.welcome", "Fuji Gatewayへようこそ")}
           </Typography>
           <Typography variant="h5" sx={{
             mt: 2,
             fontStyle: 'italic',
-            textShadow: '1px 1px 5px rgba(0, 0, 0, 0.5)',
-            color: '#fff'
+            color: '#ffffff',
+            fontSize: { xs: '1.1rem', md: '1.5rem' }
           }}>
             {t("home.subtitle", "日本とアゼルバイジャンの間で、熟練した労働者と学生をつなぐ架け橋。")}
           </Typography>
@@ -73,17 +75,18 @@ const HomePage = () => {
           fontWeight: 700,
           textAlign: 'center',
           mb: 3,
-          color: '#333'
+          color: theme.palette.text.primary,
+          fontSize: { xs: '1.8rem', md: '2.2rem' }
         }}>
           {t("home.aboutTitle", "私たちについて")}
         </Typography>
         <Typography variant="body1" sx={{
-          fontSize: '1.2rem',
+          fontSize: { xs: '1rem', md: '1.2rem' },
           lineHeight: 1.8,
           textAlign: 'center',
           maxWidth: '800px',
           margin: '0 auto',
-          color: '#555'
+          color: theme.palette.text.secondary
         }}>
           {t(
             "home.aboutText",
@@ -97,39 +100,40 @@ const HomePage = () => {
         <Typography variant="h4" sx={{
           fontWeight: 700,
           mb: 3,
-          color: '#333'
+          color: theme.palette.text.primary,
+          fontSize: { xs: '1.8rem', md: '2.2rem' }
         }}>
           {t("home.servicesTitle", "私たちのサービス")}
         </Typography>
 
         <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 3, mt: 4 }}>
           {/* Card 1 */}
-          <Box sx={serviceCardStyle(-20)}>
-            <Typography variant="h6" sx={{ fontWeight: 600, color: '#667eea', mb: 2 }}>
-              {t("home.service1Title", "採用")}
+          <Box sx={serviceCardStyle(-20, isDarkMode)}>
+            <Typography variant="h6" sx={{ fontWeight: 600, color: isDarkMode ? '#ffffff' : '#333333', mb: 2, fontSize: '1.2rem' }}>
+              {t("home.service1Title", "採用支援")}
             </Typography>
-            <Typography sx={serviceTextStyle}>
-              {t("home.service1", "日本で適切な機会を見つけるために熟練した労働者をサポートします。")}
+            <Typography sx={serviceTextStyle(isDarkMode)}>
+              {t("home.service1", "日本で適切な仕事を見つけるために支援します。")}
             </Typography>
           </Box>
 
           {/* Card 2 */}
-          <Box sx={serviceCardStyle(0)}>
-            <Typography variant="h6" sx={{ fontWeight: 600, color: '#667eea', mb: 2 }}>
-              {t("home.service2Title", "学生の紹介")}
+          <Box sx={serviceCardStyle(0, isDarkMode)}>
+            <Typography variant="h6" sx={{ fontWeight: 600, color: isDarkMode ? '#ffffff' : '#333333', mb: 2, fontSize: '1.2rem' }}>
+              {t("home.service2Title", "学生紹介")}
             </Typography>
-            <Typography sx={serviceTextStyle}>
-              {t("home.service2", "日本で貴重な教育経験を得るために学生をサポートします。")}
+            <Typography sx={serviceTextStyle(isDarkMode)}>
+              {t("home.service2", "学生が日本で価値ある教育経験を得られるよう支援します。")}
             </Typography>
           </Box>
 
           {/* Card 3 */}
-          <Box sx={serviceCardStyle(20)}>
-            <Typography variant="h6" sx={{ fontWeight: 600, color: '#667eea', mb: 2 }}>
+          <Box sx={serviceCardStyle(20, isDarkMode)}>
+            <Typography variant="h6" sx={{ fontWeight: 600, color: isDarkMode ? '#ffffff' : '#333333', mb: 2, fontSize: '1.2rem' }}>
               {t("home.service3Title", "旅行ガイド")}
             </Typography>
-            <Typography sx={serviceTextStyle}>
-              {t("home.service3", "日本を訪れる旅行者へのガイダンスを提供します。")}
+            <Typography sx={serviceTextStyle(isDarkMode)}>
+              {t("home.service3", "日本を訪れる旅行者に専門的なガイドサービスを提供します。")}
             </Typography>
           </Box>
         </Box>
@@ -141,24 +145,24 @@ const HomePage = () => {
 };
 
 // Stil helper-lar
-const serviceCardStyle = (y) => ({
+const serviceCardStyle = (y, isDarkMode) => ({
   width: { xs: '100%', sm: '48%', md: '30%' },
   padding: 7,
-  backgroundColor: 'rgba(245, 245, 245, 0.9)',
+  backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : '#f5f5f5',
   borderRadius: 3,
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  boxShadow: isDarkMode ? '0 4px 8px rgba(255, 255, 255, 0.05)' : '0 4px 8px rgba(0, 0, 0, 0.1)',
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   transform: `translateY(${y}px)`,
   '&:hover': {
     transform: `translateY(${y - 5}px) scale(1.05)`,
-    boxShadow: '0 6px 12px rgba(0, 0, 0, 0.2)',
+    boxShadow: isDarkMode ? '0 6px 12px rgba(255, 255, 255, 0.1)' : '0 6px 12px rgba(0, 0, 0, 0.2)',
   },
 });
 
-const serviceTextStyle = {
-  fontSize: '0.95rem',
-  color: '#555',
+const serviceTextStyle = (isDarkMode) => ({
+  fontSize: '1rem',
+  color: isDarkMode ? '#dddddd' : '#555555',
   lineHeight: 1.8,
-};
+});
 
 export default HomePage;

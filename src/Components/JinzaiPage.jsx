@@ -75,7 +75,7 @@ const JinzaiPage = () => {
             textAlign: "center",
             mt: { xs: 10, md: 14 },
             mb: 4,
-            fontSize: isMobile ? "1.8rem" : "2.5rem",
+            fontSize: isMobile ? "2rem" : "2.7rem",
             color: theme.palette.text.primary,
             whiteSpace: "normal",
             wordBreak: "break-word",
@@ -92,7 +92,7 @@ const JinzaiPage = () => {
           sx={{
             textAlign: "center",
             mb: 8,
-            fontSize: isMobile ? "1rem" : "1.2rem",
+            fontSize: isMobile ? "1.1rem" : "1.3rem",
             color: theme.palette.text.secondary,
           }}
         >
@@ -134,6 +134,7 @@ const JinzaiPage = () => {
                   sx={{
                     fontWeight: "bold",
                     mb: 2,
+                    fontSize: isMobile ? "1.2rem" : "1.5rem",
                     color: theme.palette.text.primary,
                   }}
                 >
@@ -142,7 +143,8 @@ const JinzaiPage = () => {
                 <Typography
                   variant="body1"
                   sx={{
-                    lineHeight: 1.6,
+                    lineHeight: 1.8,
+                    fontSize: isMobile ? "1rem" : "1.1rem",
                     color: theme.palette.text.secondary,
                   }}
                 >
@@ -159,7 +161,7 @@ const JinzaiPage = () => {
             variant="h5"
             sx={{
               fontWeight: "bold",
-              fontSize: isMobile ? "1.5rem" : "1.8rem",
+              fontSize: isMobile ? "1.7rem" : "2rem",
               textAlign: "left",
               mb: 4,
               color: theme.palette.text.primary,
@@ -211,7 +213,7 @@ const JinzaiPage = () => {
                       backgroundColor: "#1976d2",
                       color: "#fff",
                       fontWeight: "bold",
-                      fontSize: "1.3rem",
+                      fontSize: "1.4rem",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -227,7 +229,7 @@ const JinzaiPage = () => {
                       sx={{
                         fontWeight: "bold",
                         mb: 1,
-                        fontSize: "1.1rem",
+                        fontSize: isMobile ? "1.1rem" : "1.3rem",
                         color: theme.palette.text.primary,
                       }}
                     >
@@ -237,6 +239,7 @@ const JinzaiPage = () => {
                       variant="body2"
                       sx={{
                         lineHeight: 1.8,
+                        fontSize: isMobile ? "0.95rem" : "1rem",
                         color: theme.palette.text.secondary,
                       }}
                     >

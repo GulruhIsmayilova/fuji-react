@@ -1,10 +1,14 @@
 import React from 'react';
 import { Box, Grid, Typography, useTheme, IconButton, Stack } from '@mui/material';
-import { Email, Phone, LocationOn, Facebook, Instagram, LinkedIn } from '@mui/icons-material';
+import { Email, Phone, LocationOn, Facebook, Instagram } from '@mui/icons-material';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import bgImage from '../images/pngtree-a-graph-showing-graphing-statistics-image_13300948.jpg';
+import tokyoBakuIcon from '../images/tokyobaku.jpg';
+import { useTranslation } from 'react-i18next';
 
 const ContactPage = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -32,7 +36,6 @@ const ContactPage = () => {
         }}
       >
         <Grid container sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
-          {/* Company Info */}
           <Box
             sx={{
               flex: 1,
@@ -44,16 +47,15 @@ const ContactPage = () => {
             }}
           >
             <Typography variant="h4" gutterBottom fontWeight="bold">
-              会社情報
+              {t('contactPage.companyInfo')}
             </Typography>
-            <Typography variant="body1" gutterBottom>商号：FUJI GATEWAY MMC</Typography>
-            <Typography variant="body1" gutterBottom>事業内容：人材紹介、教育機関との連携</Typography>
-            <Typography variant="body1" gutterBottom>設立：2024年12月</Typography>
-            <Typography variant="body1" gutterBottom>拠点：アゼルバイジャン・バクー市</Typography>
-            <Typography variant="body1" gutterBottom>代表者：アガエフ・シラジュ</Typography>
+            <Typography variant="body1" gutterBottom>{t('contactPage.name')}</Typography>
+            <Typography variant="body1" gutterBottom>{t('contactPage.activity')}</Typography>
+            <Typography variant="body1" gutterBottom>{t('contactPage.established')}</Typography>
+            <Typography variant="body1" gutterBottom>{t('contactPage.location')}</Typography>
+            <Typography variant="body1" gutterBottom>{t('contactPage.ceo')}</Typography>
           </Box>
 
-          {/* Contact Info (instead of form) */}
           <Box
             sx={{
               flex: 1,
@@ -64,44 +66,71 @@ const ContactPage = () => {
             }}
           >
             <Typography variant="h5" gutterBottom fontWeight="bold">
-              Bizimlə əlaqə
+              {t('contactPage.title')}
             </Typography>
 
             <Stack spacing={2} mt={2}>
               <Box display="flex" alignItems="center">
                 <Phone sx={{ mr: 1 }} />
-                <Typography>+994 50 123 45 67</Typography>
+                <Typography>{t('contactPage.phone')}</Typography>
               </Box>
 
               <Box display="flex" alignItems="center">
                 <Email sx={{ mr: 1 }} />
-                <Typography>info@fujigateway.az</Typography>
+                <Typography>{t('contactPage.email')}</Typography>
               </Box>
 
               <Box display="flex" alignItems="center">
                 <LocationOn sx={{ mr: 1 }} />
-                <Typography>Bakı, Sovxoz, Bina qəsəbəsi</Typography>
+                <Typography>{t('contactPage.address')}</Typography>
+              </Box>
+
+              <Box display="flex" alignItems="center">
+                <LocationOn sx={{ mr: 1 }} />
+                <Typography>{t('contactPage.tokyoBakuOffice')}</Typography>
               </Box>
             </Stack>
 
+            <Box mt={4} p={2} borderRadius={2} bgcolor="background.paper" boxShadow={2}>
+              <Box display="flex" justifyContent="flex-start" alignItems="center" mb={2}>
+                <img
+                  src={tokyoBakuIcon}
+                  alt="Tokyo-Baku icon"
+                  style={{ width: 64, height: 64, borderRadius: '12px', objectFit: 'cover' }}
+                />
+              </Box>
+
+              <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+                {t('contactPage.tokyoBakuTitle')}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" paragraph>
+                {t('contactPage.tokyoBakuDescription1')}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" paragraph>
+                {t('contactPage.tokyoBakuDescription2')}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                <strong>{t('contactPage.tokyoBakuSlogan')}</strong>
+              </Typography>
+            </Box>
+
             <Typography mt={4} mb={1} color="text.secondary">
-              Bizi sosial şəbəkələrdə izləyin:
+              {t('contactPage.socialFollow')}
             </Typography>
             <Stack direction="row" spacing={1}>
-              <IconButton color="primary" href="https://facebook.com" target="_blank">
+              <IconButton color="primary" href="https://www.facebook.com/profile.php?id=61564094514582" target="_blank">
                 <Facebook />
               </IconButton>
-              <IconButton color="secondary" href="https://instagram.com" target="_blank">
+              <IconButton color="secondary" href="https://www.instagram.com/tokyobaku/" target="_blank">
                 <Instagram />
               </IconButton>
-              <IconButton href="https://linkedin.com" target="_blank">
-                <LinkedIn />
+              <IconButton href="https://www.tiktok.com/@tokyobaku" target="_blank">
+                <MusicNoteIcon />
               </IconButton>
             </Stack>
           </Box>
         </Grid>
 
-        {/* Google Map */}
         <Box sx={{ mt: 2, width: '100%', height: { xs: 350, md: 450 } }}>
           <iframe
             title="Baku Map"

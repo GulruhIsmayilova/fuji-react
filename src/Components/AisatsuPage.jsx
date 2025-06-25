@@ -30,11 +30,8 @@ const AisatsuPage = () => {
         backgroundColor: theme.palette.background.default,
         color: theme.palette.text.primary,
         py: { xs: 6, md: 10 },
+        mt: { xs: 8, sm: 10, md: 12 }, // ✅ Navbar ilə arasındakı məsafə
         fontFamily: "'Helvetica Neue', sans-serif",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
         minHeight: "100vh",
       }}
     >
@@ -44,9 +41,9 @@ const AisatsuPage = () => {
           spacing={6}
           alignItems="center"
           justifyContent="center"
-          direction={isMobile ? "column" : "row"}
+          direction={isMobile ? "column" : "row"} // ✅ Başlıq yuxarıda qalır
         >
-          {/* Yazı Hissəsi */}
+          {/* Mətn */}
           <Grid item xs={12} md={6}>
             <Fade in timeout={1500}>
               <Box>
@@ -97,8 +94,7 @@ const AisatsuPage = () => {
                     color: theme.palette.text.primary,
                   }}
                 >
-                  {t("greeting-obj.text", `
-こんにちは。
+                  {t("greeting-obj.text", `こんにちは。
 アゼルバイジャン出身のアガエフシラジュです。日本で過ごした6年間の経験を通じて、日本の文化やビジネス環境に深く触れ、その魅力に強く引き寄せられました。この経験を元に、アゼルバイジャンと日本を繋ぐ架け橋となるべく、今の事業を立ち上げました。
 
 私たちのミッションはシンプルです。アゼルバイジャンにおける日本文化への興味を持つ人々と、日本の企業や教育機関を繋げ、またアゼルバイジャンから日本を訪れる旅行者に対して、最高のガイドとサポートを提供すること。
@@ -107,14 +103,13 @@ const AisatsuPage = () => {
 
 この会社はただのビジネスではなく、アゼルバイジャンと日本の未来を形作るための一歩です。両国の文化が交わり、新しい可能性が生まれる瞬間を共に作り上げていきましょう。
 
-どうぞ、今後ともよろしくお願いいたします。
-                  `)}
+どうぞ、今後ともよろしくお願いいたします。`)}
                 </Typography>
               </Box>
             </Fade>
           </Grid>
 
-          {/* Şəkil Hissəsi */}
+          {/* Şəkil */}
           <Grid item xs={12} md={6}>
             <Fade in timeout={1000}>
               <Box sx={{ textAlign: "center" }}>
@@ -124,8 +119,9 @@ const AisatsuPage = () => {
                   style={{
                     width: "100%",
                     maxWidth: 400,
-                    borderRadius: "10px",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                    borderRadius: "12px",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                    objectFit: "cover",
                   }}
                 />
               </Box>
@@ -133,7 +129,7 @@ const AisatsuPage = () => {
           </Grid>
         </Grid>
 
-        {/* Sosial Şəbəkələr və Əlaqə */}
+        {/* Sosial və Əlaqə */}
         <Box sx={{ textAlign: "center", mt: 8 }}>
           <Stack direction="row" spacing={2} justifyContent="center" sx={{ mb: 3 }}>
             <IconButton
@@ -143,7 +139,6 @@ const AisatsuPage = () => {
             >
               <FaFacebookF size={22} />
             </IconButton>
-
             <IconButton
               color="inherit"
               href="https://www.tiktok.com/@tokyobaku"
@@ -151,7 +146,6 @@ const AisatsuPage = () => {
             >
               <FaTiktok size={22} />
             </IconButton>
-
             <IconButton
               color="inherit"
               href="https://www.instagram.com/tokyobaku/"

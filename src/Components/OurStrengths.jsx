@@ -37,9 +37,9 @@ const OurStrengths = () => {
   ];
 
   const achievements = [
-    { number: "500+", label: t("strengthsContent.achievement1", "Successful Placements") },
+    { number: "100+", label: t("strengthsContent.achievement1", "Successful Placements") },
     { number: "10+", label: t("strengthsContent.achievement2", "Countries Served") },
-    { number: "200+", label: t("strengthsContent.achievement3", "Happy Clients") },
+    { number: "150+", label: t("strengthsContent.achievement3", "Happy Clients") },
   ];
 
   return (
@@ -63,7 +63,7 @@ const OurStrengths = () => {
               color: theme.palette.text.primary,
               textAlign: "center",
               mb: 6,
-              fontSize: isMobile ? "1.5rem" : "2rem",
+              fontSize: isMobile ? "1.7rem" : "2.2rem",
             }}
           >
             {t("strengthsContent.title", "Our Strengths")}
@@ -130,7 +130,7 @@ const OurStrengths = () => {
                     fontWeight: "bold",
                     color: theme.palette.text.primary,
                     mb: 1,
-                    fontSize: isMobile ? "1.1rem" : "1.4rem",
+                    fontSize: isMobile ? "1.2rem" : "1.5rem",
                   }}
                 >
                   {strength.title}
@@ -140,7 +140,7 @@ const OurStrengths = () => {
                   sx={{
                     color: theme.palette.text.secondary,
                     textAlign: "center",
-                    fontSize: isMobile ? "0.9rem" : "1rem",
+                    fontSize: isMobile ? "1rem" : "1.1rem",
                     lineHeight: 1.6,
                   }}
                 >
@@ -172,7 +172,7 @@ const OurStrengths = () => {
                   fontWeight: "bold",
                   mb: 4,
                   color: "#ffffff",
-                  fontSize: isMobile ? "1.5rem" : "2rem",
+                  fontSize: isMobile ? "1.7rem" : "2.2rem",
                 }}
               >
                 {t("strengthsContent.achievementsTitle", "Our Achievements")}
@@ -196,10 +196,10 @@ const OurStrengths = () => {
                       },
                     }}
                   >
-                    <Typography variant="h5" sx={{ fontWeight: "bold", color: "#667eea" }}>
+                    <Typography variant="h5" sx={{ fontWeight: "bold", color: "#667eea", fontSize: isMobile ? "1.5rem" : "1.8rem" }}>
                       {stat.number}
                     </Typography>
-                    <Typography variant="body1" sx={{ color: "#ffffff" }}>
+                    <Typography variant="body1" sx={{ color: "#ffffff", fontSize: isMobile ? "1rem" : "1.1rem" }}>
                       {stat.label}
                     </Typography>
                   </Box>

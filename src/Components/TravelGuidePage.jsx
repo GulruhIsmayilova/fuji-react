@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import {
-  Container, Typography, Grid, Card, CardContent, CardMedia, Box
+  Container, Typography, Grid, Card, CardContent, CardMedia, Box, useTheme, useMediaQuery
 } from "@mui/material";
 import {
   FlightTakeoff, TempleBuddhist, Restaurant, Spa, LocalFlorist
@@ -26,14 +26,15 @@ import chubuImage from "../images/park.jfif";
 
 const heroSlides = ["walpaper1.jpg", "imrt2.jpg", "osaka.jpg", "cherry.jpg"];
 
-const HeroSectionWrapper = styled(Box)({
+const HeroSectionWrapper = styled(Box)(({ theme }) => ({
   width: "100%",
   minHeight: "500px",
   position: "relative",
   overflow: "hidden",
   color: "#fff",
   textAlign: "center",
-});
+  backgroundColor: theme.palette.mode === 'dark' ? '#000' : '#fff'
+}));
 
 const Overlay = styled(Box)({
   position: "absolute",
@@ -61,13 +62,14 @@ const InfoItem = styled(Box)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   transition: "transform 0.3s, color 0.3s",
+  color: theme.palette.text.primary,
   "&:hover svg": {
-    color: "red",
+    color: theme.palette.mode === 'dark' ? 'red' : 'red',
     transform: "scale(1.2)",
   },
 }));
 
-const GalleryCard = styled(Card)({
+const GalleryCard = styled(Card)(({ theme }) => ({
   height: "100%",
   display: "flex",
   flexDirection: "column",
@@ -75,6 +77,8 @@ const GalleryCard = styled(Card)({
   borderRadius: 16,
   overflow: "hidden",
   transition: "transform 0.3s ease",
+  backgroundColor: theme.palette.mode === 'dark' ? '#1a1a1a' : '#fff',
+  color: theme.palette.text.primary,
   "&:hover": {
     transform: "scale(1.03)",
   },
@@ -82,9 +86,9 @@ const GalleryCard = styled(Card)({
     opacity: 1,
     transform: "scale(1.2)",
   },
-});
+}));
 
-const HeartIcon = styled(Box)({
+const HeartIcon = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: 8,
   right: 8,
@@ -92,20 +96,20 @@ const HeartIcon = styled(Box)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "red",
+  color: theme.palette.mode === 'dark' ? '#ff4d4d' : 'red',
   fontSize: 28,
   opacity: 0,
   transition: "opacity 0.3s, transform 0.3s",
   pointerEvents: "none",
-});
+}));
 
-const iconMap = [
-  <FlightTakeoff sx={{ fontSize: 40, color: "dodgerblue", mb: 1 }} />,
-  <TempleBuddhist sx={{ fontSize: 40, color: "mediumseagreen", mb: 1 }} />,
-  <Restaurant sx={{ fontSize: 40, color: "orange", mb: 1 }} />,
-  <Spa sx={{ fontSize: 40, color: "orchid", mb: 1 }} />,
-  <LocalFlorist sx={{ fontSize: 40, color: "crimson", mb: 1 }} />,
-];
+const iconMap = (theme) => ([
+  <FlightTakeoff sx={{ fontSize: 46, color: theme.palette.info.main, mb: 1 }} />,
+  <TempleBuddhist sx={{ fontSize: 46, color: theme.palette.success.main, mb: 1 }} />,
+  <Restaurant sx={{ fontSize: 46, color: theme.palette.warning.main, mb: 1 }} />,
+  <Spa sx={{ fontSize: 46, color: theme.palette.secondary.main, mb: 1 }} />,
+  <LocalFlorist sx={{ fontSize: 46, color: theme.palette.error.main, mb: 1 }} />,
+]);
 
 const imageList = [
   naraImage,
@@ -120,6 +124,8 @@ const imageList = [
 
 export default function TravelGuidePage() {
   const { t } = useTranslation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const rawHeroInfo = t("travelGuidePage.iconItems", { returnObjects: true });
   const heroInfo = Array.isArray(rawHeroInfo) ? rawHeroInfo : [];
@@ -128,8 +134,7 @@ export default function TravelGuidePage() {
   const galleryItems = Array.isArray(rawGalleryItems) ? rawGalleryItems : [];
 
   return (
-    <Box>
-      {/* Hero Bölməsi */}
+    <Box sx={{ bgcolor: theme.palette.mode === 'dark' ? '#000' : '#fff', color: theme.palette.text.primary }}>
       <HeroSectionWrapper>
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
@@ -155,24 +160,23 @@ export default function TravelGuidePage() {
         </Swiper>
         <Overlay />
         <Content>
-          <Typography variant="h2" component="h1" gutterBottom>
+          <Typography variant="h2" component="h1" gutterBottom sx={{ fontSize: isMobile ? "2rem" : "3.2rem" }}>
             {t("travelGuidePage.heroHeadline")}
           </Typography>
-          <Typography variant="h6" sx={{ mb: 4 }}>
+          <Typography variant="h6" sx={{ mb: 4, fontSize: isMobile ? "1rem" : "1.2rem" }}>
             {t("travelGuidePage.subtitle")}
           </Typography>
         </Content>
       </HeroSectionWrapper>
 
-      {/* Iconlu məlumatlar */}
-      <Box sx={{ backgroundColor: "#fff", py: 5 }}>
+      <Box sx={{ backgroundColor: theme.palette.background.default, py: 5 }}>
         <Container maxWidth="lg">
           <Grid container spacing={2} justifyContent="center">
             {heroInfo.map((item, index) => (
               <Grid item xs={6} sm={4} md={2} key={index}>
                 <InfoItem>
-                  {iconMap[index]}
-                  <Typography variant="subtitle1" fontWeight="bold" sx={{ mt: 1 }}>
+                  {iconMap(theme)[index]}
+                  <Typography variant="subtitle1" fontWeight="bold" sx={{ mt: 1, fontSize: isMobile ? "0.9rem" : "1.05rem" }}>
                     {item.title}
                   </Typography>
                 </InfoItem>
@@ -182,10 +186,9 @@ export default function TravelGuidePage() {
         </Container>
       </Box>
 
-      {/* Gallery Bölməsi */}
-      <Box sx={{ backgroundColor: "#fafafa", py: 8 }}>
+      <Box sx={{ backgroundColor: theme.palette.mode === 'dark' ? '#111' : '#fafafa', py: 8 }}>
         <Container maxWidth="xl">
-          <Typography variant="h4" align="center" gutterBottom>
+          <Typography variant="h4" align="center" gutterBottom sx={{ fontSize: isMobile ? "1.8rem" : "2.2rem" }}>
             {t("travelGuidePage.title")}
           </Typography>
           <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
@@ -203,10 +206,10 @@ export default function TravelGuidePage() {
                     sx={{ objectFit: "cover" }}
                   />
                   <CardContent sx={{ flexGrow: 1, textAlign: "center" }}>
-                    <Typography variant="h6" gutterBottom>
+                    <Typography variant="h6" gutterBottom sx={{ fontSize: isMobile ? "1rem" : "1.2rem" }}>
                       {item.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontSize: isMobile ? "0.9rem" : "1rem" }}>
                       {item.description}
                     </Typography>
                   </CardContent>
